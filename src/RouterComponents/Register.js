@@ -1,1 +1,0 @@
-import {loginUser } from "../FirebaseConfig/firebaseAuth.js"
