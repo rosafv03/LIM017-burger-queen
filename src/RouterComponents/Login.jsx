@@ -1,9 +1,14 @@
 import {loginUser } from '../FirebaseConfig/firebaseAuth.js';
 import React from 'react'
+import { useState } from 'react';
 import './Login.css';
 
 
 export const Login = () => {
+  const [user, setUser] = useState({
+    email:"",
+    password:""
+  })
   return (
      <div className="container">
            {/* envia la informacion del formulario a handlerSubmit */}
