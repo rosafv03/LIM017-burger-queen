@@ -9,11 +9,13 @@ import { Home } from "./RouterComponents/Home";
 import { Kitchen } from "./RouterComponents/Kitchen";
 import { Login } from "./RouterComponents/Login";
 import { Register } from "./RouterComponents/Register";
+import { AuthProvider } from "./context/authContext";
 
 export function Navigation() {
   return (
     <Router>
       <div className="Navigation">
+      <AuthProvider>
         {/* <nav>
           <ul>
             <li>
@@ -33,6 +35,7 @@ export function Navigation() {
           <Route path="/login" element={<Login />} />
           <Route path="/kitchen" element={<Kitchen />} />
         </Routes>
+        </AuthProvider>
       </div>
     </Router>
   );

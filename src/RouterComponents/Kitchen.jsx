@@ -1,7 +1,24 @@
 
-export const Kitchen = () => {
-    return (
-      <div><h1>Cocina</h1></div>
-    )
-  }
+// import { useContext } from "react"
+// import  {userContext, singOutUser} from "../context/authContext"
+// export const Kitchen = () => {
+
+//   const{ user, singOutUser} =useContext(userContext);
+
+//   const hadleClickLogout = async () => {
+//   try{
+//   await singOutUser();
+//   console.log('cerro sesion', user)
+//   }catch(error){
+//     console.log(error.code)
+//   }
+//     };
+
+//     return (
+//       <div>
+//       <h1>Cocina</h1>
+//       <button onClick={hadleClickLogout}></button>
+//       </div>
+//     )
+//   }
   
