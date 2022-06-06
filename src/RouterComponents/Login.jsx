@@ -1,25 +1,26 @@
-
-import React from 'react'
-import { useContext, useState } from 'react'
-import {loginUser, userContext} from "../context/authContext"
 import './Login.css';
+import { useContext, useState } from 'react';
+import { userContext, loginUser } from '../context/authContext';
 
 
 export const Login = () => {
+  const {loginUser} = useContext(userContext);
+
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const {loginUser}= useContext(userContext)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
- try{
- await loginUser(email,password)
-//  console.log('usuario', email,'logeado', password)
- }catch(error){
-   console.log(error.code)
- }
-   };
-
+    try {
+      await loginUser(email, password)
+      //------------AGREGAR CONDICION QUE SI SE EJECUTA EL LOGIN PASE A LA PAGINA HOME-------------------|
+      alert('Bienvenido ' + email + 'ya puedes hacer el pedido');
+    //   console.log('usuario', email, 'logueado');
+    } catch (error) {
+      console.log(error.code);
+    }
+  };
+ 
   return (
     <form onSubmit={handleSubmit}>
     <div className="container">
@@ -30,10 +31,10 @@ export const Login = () => {
 
       
         <label className="form-label">Contraseña:</label>
-        <input type="password" className="input" placeholder="ingresar contraseña" id="password" onChange={e=>setPassword(e.target.value)} required></input>
+        <input type="password" className="input" placeholder="ingresar contraseña" id="password" onChange={e=> setPassword(e.target.value)} required></input>
       
            <p>¿No tienes cuenta?<a href="/register"> Regístrate</a></p>
-           <button className='buttonLogin' type="button" onClick={loginUser} >Login</button>
+           <button className='buttonLogin' type="submit" >Login</button>
          </div>
         </form>
   )
