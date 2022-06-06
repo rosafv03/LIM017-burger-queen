@@ -3,6 +3,20 @@ body{
     /* color: white ; */
 }
 button{
-    color: white ;
-    background-color: orange ;
+    background-color: #f09014;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font: normal 400 16px/16px Open sans;
+    min-height: 35px;
+    min-width: 100px;
+    padding: 10px 25px;
+    margin: 5px;
+}
+.imgBanner{
+    width: 100%;
+}
+h1{
+    color: #ffffff;
 }
