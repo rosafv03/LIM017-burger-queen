@@ -6,7 +6,7 @@ import { auth } from "../FirebaseConfig/firebaseAuth";
 export const userContext =createContext()
 
  export const AuthProvider = ({ children }) => {
-    const [user, setUser] =useState(false);
+    const [user, setUser] = useState(false);
 
     // useEffect(() => {
     //     const unsuscribe = onAuthStateChanged(auth,(user)  => {
@@ -18,11 +18,8 @@ export const userContext =createContext()
     //     login: true
     // };
     const registerUser = (email, password) =>  createUserWithEmailAndPassword(auth ,email ,password);
+    const loginUser = ( email, password) => signInWithEmailAndPassword(auth, email, password);
     
-    const loginUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
-    //  console.log(email, password);
-    // }
-    // const signOutUser = ()=> signOut(auth)
     return (
     <userContext.Provider value={{ user, setUser,  registerUser, loginUser}}>
     {children}

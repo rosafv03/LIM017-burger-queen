@@ -32,8 +32,8 @@ export function Navigation() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/kitchen" element={<Kitchen />} />
+          <Route path="/" element={<Login />} />
         </Routes>
         </AuthProvider>
       </div>
