@@ -1,11 +1,14 @@
 import './Login.css';
 import { useContext, useState } from 'react';
-import { userContext, loginUser } from '../context/authContext';
+import { userContext } from '../context/authContext';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Login = () => {
   const {loginUser} = useContext(userContext);
 
+  const navigate = useNavigate();
+  
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
@@ -13,6 +16,7 @@ export const Login = () => {
     e.preventDefault()
     try {
       await loginUser(email, password)
+      navigate('/home')
       //------------AGREGAR CONDICION QUE SI SE EJECUTA EL LOGIN PASE A LA PAGINA HOME-------------------|
       alert('Bienvenido ' + email + 'ya puedes hacer el pedido');
     //   console.log('usuario', email, 'logueado');

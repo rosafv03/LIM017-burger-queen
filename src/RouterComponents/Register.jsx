@@ -1,13 +1,14 @@
 /* eslint-disable no-useless-concat */
 // import { registerWithEmail } from "../FirebaseConfig/firebaseAuth.js"
 import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 // import { useAuth } from "../context/authContext.js";
 // import { Link } from 'react-router-dom';
-import { userContext, registerUser } from "../context/authContext"
+import { userContext} from "../context/authContext"
 
 export const Register = () => {
 
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   // const {singup} = useAuth()
@@ -18,6 +19,7 @@ export const Register = () => {
     try {
       await registerUser(email, password)
       alert('Usuario ' + email + '   registrado correctamente');
+      navigate('/home')
       console.log('usuario', email, 'registrado', password);
     } catch (error) {
       console.log(error.code);
