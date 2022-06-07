@@ -7,14 +7,18 @@ export const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 
-
-
 export const getData = async() => {
             try{
   
                 const querySnapshot = await getDocs(collection(db, "orderItems"));
-                const dataDB = querySnapshot.docs.map(doc => ({id: doc.id,...doc.data() }))
-                console.log(dataDB)
+                /* const dataDB = querySnapshot.docs.map(doc => ({id: doc.id,...doc.data() })) */
+                
+                const docs=[]
+                querySnapshot.forEach((doc)=>{
+                    docs.push({...doc.data(),id: doc.id})
+                })
+                return docs;
+                /* console.log(docs) */
             }
             catch  (error){
                 console.log(error)
