@@ -32,9 +32,9 @@ export const Home = () => {
 
   //  } 
 
-  // const butonAgregando = () => {
-  //   console.log('agregando al pedido')
-  // }
+  const butonAgregando = () => {
+    console.log('agregando al pedido')
+  }
   // if(loading) return <h1>Cargando Menu Data.....</h1>
   return (
     <div className='container'>
@@ -62,7 +62,7 @@ export const Home = () => {
           {
             items.map((item) => (
             <div>
-          <button key={item.id}>
+          <button key={item.id} onClick={butonAgregando}>
             {item.items}
             {item.price}$
             {item.uid}
