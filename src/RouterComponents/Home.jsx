@@ -1,23 +1,28 @@
 
-import React, { useEffect} from 'react'
+import React, { useEffect ,useState} from 'react'
 import './Home.css';
 import banner from '../assets/img/banner.png';
 import { getData } from '../FirebaseConfig/FirestoreDB';
 // import { useFirestore } from '../hooks/FirestoreConfig.js';
 
-
 export const Home = () => {
 
-  useEffect(() => {
-            getData();
-            console.log(getData)
-        }, []);
-        console.log(getData)
+  const [items, setItems] = useState([]);
 
-     
+  useEffect(() => {
+    const fetchData = async () => {
+
+      const itemsDB = await getData();
+      console.log('trayendo items', itemsDB)
+      setItems(itemsDB)
+    }
+    fetchData();
+
+  }, []);
+
   // const [data, setData] = useState();
 
-  
+
   // const {data, loading} = useFirestore()
 
   // const getDataFunction = () => {
@@ -30,7 +35,7 @@ export const Home = () => {
   // const butonAgregando = () => {
   //   console.log('agregando al pedido')
   // }
-// if(loading) return <h1>Cargando Menu Data.....</h1>
+  // if(loading) return <h1>Cargando Menu Data.....</h1>
   return (
     <div className='container'>
       <div>
@@ -50,22 +55,22 @@ export const Home = () => {
       </div>
       <div className="breackFast">
       </div>
-       <div className='lunch'>
+      <div className='lunch'>
       </div>
       <div className='conteinerOrder'>
-      <>
-        {/* {
-          data.map((item) => (
+        <>
+          {
+            items.map((item) => (
             <div>
-          <button key={item.id} onClick={butonAgregando}>
+          <button key={item.id}>
             {item.items}
             {item.price}$
             {item.uid}
           </button>
           </div>
           ))
-        } */}
-      </>
+        }
+        </>
         {/* ------------obtener al hacer click el items ----------*/}
         {/* ------------tener en cuenta los items para sumarlos y no repetirlos ----------*/}
         {/* ------------mostrar el contenido de la orden----------*/}
