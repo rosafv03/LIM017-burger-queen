@@ -1,30 +1,30 @@
 
 import React, { useEffect ,useState} from 'react'
-import { itemSortBreackfast } from '../FirebaseConfig/FirestoreDB';
+
+import { itemSortLuch } from '../../FirebaseConfig/FirestoreDB';
+// import { useFirestore } from '../hooks/FirestoreConfig.js';
 
 
-export const BreackFast = () =>{
-    const [itemsBreackfast, setItems] = useState([]);
-
+export const Lunch = () => {
+    const [itemsLunch, setItemsLunch] = useState([]);
     
   useEffect(() => {
     const fetchData = async () => {
-      const itemsDB = await itemSortBreackfast();
+      const itemsDB = await itemSortLuch();
       console.log('trayendo items', itemsDB)
-      setItems(itemsDB)
+      setItemsLunch(itemsDB)
     }
     fetchData();
   }, []);
-
+  
   const butonAgregando = () => {
     console.log('agregando al pedido')
   }
   return (
-    <div>BreackFast
-    
-    <>
+   <div>Lunch
+        <>
           {
-            itemsBreackfast.map((item) => (
+            itemsLunch.map((item) => (
            <div>
         <button key={item.id} onClick={butonAgregando}>
            {item.items}
@@ -35,6 +35,6 @@ export const BreackFast = () =>{
           ))
         }
         </>
-        </div>
+   </div>
   )
 }
