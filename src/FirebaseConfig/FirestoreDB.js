@@ -11,7 +11,7 @@ export const db = getFirestore(app);
 export const itemSortBreackfast = async() => {
     try{
         const refDataQuery =  collection(db, "orderItems")
-        const q = query(refDataQuery, where("category", "==", "breackfast"));
+        const q = query(refDataQuery, where("category", "==", "breakfast"));
         const querySnapshot = await getDocs(q);
         /* const dataDB = querySnapshot.docs.map(doc => ({id: doc.id,...doc.data() })) */
         

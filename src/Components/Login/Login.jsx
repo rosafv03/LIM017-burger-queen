@@ -1,6 +1,6 @@
 import './Login.css';
 import { useContext, useState } from 'react';
-import { userContext } from '../context/authContext';
+import { userContext } from '../../FirebaseConfig/authContext';
 import { useNavigate } from 'react-router-dom';
 
 

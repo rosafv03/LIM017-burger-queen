@@ -4,11 +4,11 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Home } from "./RouterComponents/Home";
-import { Kitchen } from "./RouterComponents/Kitchen";
-import { Login } from "./RouterComponents/Login";
-import { Register } from "./RouterComponents/Register";
-import { AuthProvider } from "./context/authContext";
+import { Home } from "./Components/Home/Home";
+import { Kitchen } from "./Components/Kitchen/Kitchen";
+import { Login } from "./Components/Login/Login";
+import { Register } from "./Components/Register/Register";
+import { AuthProvider } from "./FirebaseConfig/authContext";
 
 
 export function Navigation() {

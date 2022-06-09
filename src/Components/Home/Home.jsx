@@ -1,9 +1,9 @@
 
 import React, { } from 'react'
 import './Home.css';
-import banner from '../assets/img/banner.png';
-import { Lunch } from './Lunch';
-import { BreackFast } from './BreackFast';
+import banner from '../../assets/img/banner.png';
+import { Lunch } from '../Items/Lunch';
+import { BreackFast } from '../Items/BreackFast';
 
 export const Home = () => {
 

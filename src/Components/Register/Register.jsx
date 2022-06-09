@@ -4,7 +4,7 @@ import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 // import { useAuth } from "../context/authContext.js";
 // import { Link } from 'react-router-dom';
-import { userContext} from "../context/authContext"
+import { userContext} from "../../FirebaseConfig/authContext"
 
 export const Register = () => {
 
@@ -20,6 +20,7 @@ export const Register = () => {
       await registerUser(email, password)
       alert('Usuario ' + email + '   registrado correctamente');
       navigate('/home')
+      console.log(registerUser)
       console.log('usuario', email, 'registrado', password);
     } catch (error) {
       console.log(error.code);
