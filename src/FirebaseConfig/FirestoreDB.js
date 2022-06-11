@@ -8,7 +8,7 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
 
-export const itemSortBreackfast = async() => {
+export const itemSortbreakfast = async() => {
     try{
         const refDataQuery =  collection(db, "orderItems")
         const q = query(refDataQuery, where("category", "==", "breakfast"));

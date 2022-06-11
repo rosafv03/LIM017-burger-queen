@@ -4,6 +4,7 @@ import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 // import { useAuth } from "../context/authContext.js";
 // import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import { userContext} from "../../FirebaseConfig/authContext"
 
 export const Register = () => {
@@ -18,8 +19,9 @@ export const Register = () => {
     e.preventDefault()
     try {
       await registerUser(email, password)
-      alert('Usuario ' + email + '   registrado correctamente');
-      navigate('/home')
+      swal(email + " Registrado", " correctamente, ya puedes iniciar sesión", "success")
+      // alert('Usuario ' + email + '   registrado correctamente');
+      navigate('/')
       console.log(registerUser)
       console.log('usuario', email, 'registrado', password);
     } catch (error) {
