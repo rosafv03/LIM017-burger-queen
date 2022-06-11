@@ -3,15 +3,13 @@ import React, { } from 'react'
 import './Home.css';
 import banner from '../../assets/img/banner.png';
 import { Lunch } from '../Items/Lunch';
-import { BreackFast } from '../Items/BreackFast';
+import { Breakfast } from '../Items/BreakFast';
+import { useNavigate } from 'react-router-dom';
+import { singOutUser } from '../../FirebaseConfig/authContext';
+import swal from 'sweetalert';
+
 
 export const Home = () => {
-
- 
-
-  // const [data, setData] = useState();
-
-
   // const {data, loading} = useFirestore()
 
   // const getDataFunction = () => {
@@ -23,6 +21,40 @@ export const Home = () => {
   // const buttonCCC = () => {
 
   // }
+  const navigate = useNavigate();
+
+  
+//     e.preventDefault();
+    
+//     .then(() => {
+//       const confirmsignOff = window.confirm('Estás seguro de cerrar sesión?');
+//      if (confirmsignOff === true) {
+//       navigate('/')
+//      }
+//   })
+// }
+
+
+const handleSinOff = (e) => { 
+  e.preventDefault();
+  singOutUser()
+  swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: ["No", "Sí"]
+})
+.then((logout) => {
+  if (logout) {
+    swal({text:"Cerrando sesión con exito", 
+      icon: "success",
+    });
+    navigate('/')
+  }
+});
+}
+
+
   const trayendoing = () =>{
     console.log('hola almuerzo')
   }
@@ -31,6 +63,7 @@ export const Home = () => {
     <div className='container'>
       <div>
         <img className="imgBanner" src={banner} alt="65465" />
+        <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
       </div>
 
       <h1>Tomar pedido</h1>
@@ -44,8 +77,8 @@ export const Home = () => {
         <button type='button'>Desayuno</button>
         <button type='button' onClick={trayendoing}>Almuerzo</button>
       </div>
-      <div className="breackFast">
-      <BreackFast />
+      <div className="breakfast">
+      <Breakfast />
       </div>
       <div className='lunch'>
        <Lunch/>

@@ -2,7 +2,7 @@ import './Login.css';
 import { useContext, useState } from 'react';
 import { userContext } from '../../FirebaseConfig/authContext';
 import { useNavigate } from 'react-router-dom';
-
+import swal from 'sweetalert';
 
 export const Login = () => {
   const {loginUser} = useContext(userContext);
@@ -18,7 +18,8 @@ export const Login = () => {
       await loginUser(email, password)
       navigate('/home')
       //------------AGREGAR CONDICION QUE SI SE EJECUTA EL LOGIN PASE A LA PAGINA HOME-------------------|
-      alert('Bienvenido ' + email + 'ya puedes hacer el pedido');
+      swal("Bienvenido!", email + " Ya puede realizar tu pedido", "success")
+      // alert('Bienvenido ' + email + 'ya puedes hacer el pedido');
     //   console.log('usuario', email, 'logueado');
     } catch (error) {
       console.log(error.code);

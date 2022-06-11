@@ -10,14 +10,13 @@ import { Login } from "./Components/Login/Login";
 import { Register } from "./Components/Register/Register";
 import { AuthProvider } from "./FirebaseConfig/authContext";
 
-
-export function Navigation() {
+ 
+ function Navigation () {
   return (
     <Router>
       <div className="Navigation">
       <AuthProvider>
-     
-        <Routes>
+      <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/kitchen" element={<Kitchen />} />
@@ -29,6 +28,5 @@ export function Navigation() {
     </Router>
   );
 }
-
 
 export default Navigation;
