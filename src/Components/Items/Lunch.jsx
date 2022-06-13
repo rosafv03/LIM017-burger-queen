@@ -20,7 +20,7 @@ export const Lunch = () => {
     console.log('agregando al pedido')
   }
   return (
-   <div>Lunch
+   <div>
         <>
           {
             itemsLunch.map((item) => (

@@ -20,3 +20,95 @@ button{
 h1{
     color: #ffffff;
 }
+.container{
+    width: 80%;
+}
+
+.container-tabs {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%;
+    height: auto;
+    background-color:#15181a;
+    margin: 100px auto 0;
+    word-break: break-all;
+    border: 1px solid rgba(255, 250, 250, 0.774);
+  }
+  
+  .bloc-tabs {
+    display: flex;
+  }
+  .tabs {
+  
+    padding: 15px;
+    text-align: center;
+    width: 50%;
+    background: rgba(128, 128, 128, 0.075);
+    cursor: pointer;
+    /* box-sizing: content-box; */
+    position: relative;
+    outline: none;
+  }
+  .tabs:not(:last-child){
+    border-right: 1px solid rgba(0, 0, 0, 0.274);
+  }
+  
+  .active-tabs  {
+    background: rgb(197, 72, 14);
+    border-bottom: 1px solid transparent;
+  }
+  
+  
+  button {
+    border: none;
+    
+  }
+  .content-tabs {
+    flex-grow : 1;
+  }
+  .content {
+    background-color:#15181a;
+    padding: 20px;
+    
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+  .content p {
+    width: 100%;
+    height: 100%;
+  }
+  .active-content {
+    display: block;
+  }
+  .conteinerOrder{
+     border-top: 1px solid rgb(252, 237, 237); 
+    /* min-height: 50%; */
+    display: flex;
+     flex-direction: column; 
+    position: relative;
+    width: 60%;
+    height: auto;
+    margin: 100px auto 0;
+    word-break: break-all;
+  }
+  .nameClient{
+    width: 60%;
+  }
+  .total-textarea{
+    resize: none;
+    margin-top: 8px;
+  }
+  .price-total{
+    margin: 8px;
+    display: flex;
+    justify-content:end;
+  }
