@@ -24,15 +24,13 @@ export const Breakfast = () =>{
     
     <>
           {
-            itemsbreakfast.map((item) => (
-           <div>
-        <button key={item.id} 
-        onClick={butonAgregando}>
+            itemsbreakfast.map((item, i) => (
+           
+        <button key={i} >
            {item.items}
            {item.price} $
             {item.uid}
         </button>
-          </div>
           ))
         }
         </>

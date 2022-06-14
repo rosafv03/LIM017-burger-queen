@@ -23,9 +23,9 @@ export const Lunch = () => {
    <div>
         <>
           {
-            itemsLunch.map((item) => (
+            itemsLunch.map((item, i) => (
            <div>
-        <button key={item.id} onClick={butonAgregando}>
+        <button key={i} onClick={butonAgregando}>
            {item.items}
            {item.price} $
             {item.uid}
