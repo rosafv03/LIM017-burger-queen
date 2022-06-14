@@ -20,13 +20,14 @@ export const Breakfast = () =>{
     console.log('agregando al pedido')
   }
   return (
-    <div>breakfast
+    <div>
     
     <>
           {
             itemsbreakfast.map((item) => (
            <div>
-        <button key={item.id} onClick={butonAgregando}>
+        <button key={item.id} 
+        onClick={butonAgregando}>
            {item.items}
            {item.price} $
             {item.uid}
