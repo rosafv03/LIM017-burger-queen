@@ -1,10 +1,12 @@
 
-import React, { useEffect ,useState} from 'react'
+import React, { useEffect ,useState, useContext} from 'react'
 import { itemSortbreakfast } from '../../FirebaseConfig/FirestoreDB';
-
+import {cartContext} from '../../Hooks/CartContext'
 
 export const Breakfast = () =>{
     const [itemsbreakfast, setItems] = useState([]);
+
+    const {cart , addOrder} = useContext(cartContext)
 
     
   useEffect(() => {
@@ -16,8 +18,8 @@ export const Breakfast = () =>{
     fetchData();
   }, []);
 
-  const butonAgregando = () => {
-    console.log('agregando al pedido')
+  const addItemsToCarts = (item) => {
+    addOrder(item)
   }
   return (
     <div>
@@ -25,11 +27,10 @@ export const Breakfast = () =>{
     <>
           {
             itemsbreakfast.map((item, i) => (
-           
-        <button key={i} >
+           <button key={i} onClick={() => addItemsToCarts (item)}>
            {item.items}
-           {item.price} $
-            {item.uid}
+           <br></br>
+           {item.price}  $
         </button>
           ))
         }
