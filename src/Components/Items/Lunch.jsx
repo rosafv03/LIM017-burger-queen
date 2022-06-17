@@ -8,6 +8,12 @@ import {cartContext} from '../../Hooks/CartContext'
 export const Lunch = () => {
     const [itemsLunch, setItemsLunch] = useState([]);
     const {cart , addOrder} = useContext(cartContext)
+
+   
+    const ele =
+    <div> <h1> Carrito</h1>
+    <li>{cart}</li>
+    </div>;
     
   useEffect(() => {
     const fetchData = async () => {
@@ -23,20 +29,18 @@ export const Lunch = () => {
   }
 
   return (
-   <div>
-        <>
-          {
-            itemsLunch.map((item, i) => (
-           <div>
-        <button key={i} onClick={() => addItemsToCarts(item)}>
-           {item.items}
-           <br></br>
-           {item.price} $
-        </button>
+   <><div>
+      <>
+        {itemsLunch.map((item, i) => (
+          <div>
+            <button key={i} onClick={() => addItemsToCarts(item.items)}>
+              {item.items}
+              <br></br>
+              {item.price} $
+            </button>
           </div>
-          ))
-        }
-        </>
-   </div>
+        ))}
+      </>
+    </div><> {ele} </></>    
   )
 }

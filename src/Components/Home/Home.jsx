@@ -41,7 +41,7 @@ const handleSinOff = (e) => {
 }
 
   return (
-    <div className='container'>
+    <div className='container-home '>
       <div>
         <img className="imgBanner" src={banner} alt="65465" />
         <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>

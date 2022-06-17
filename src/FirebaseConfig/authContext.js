@@ -29,5 +29,3 @@ export const userContext =createContext()
     );
 };
 export const singOutUser = () => signOut(auth)
-
-export default  AuthProvider;

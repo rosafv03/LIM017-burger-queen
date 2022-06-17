@@ -9,7 +9,7 @@ import { Home } from "./Components/Home/Home";
 import { Login } from "./Components/Login/Login";
 import { Register } from "./Components/Register/Register";
 import { AuthProvider } from "./FirebaseConfig/authContext";
-import CartContextProvider from "./Hooks/CartContext";
+import {CartContextProvider} from "./Hooks/CartContext";
 
  
  function Navigation () {
