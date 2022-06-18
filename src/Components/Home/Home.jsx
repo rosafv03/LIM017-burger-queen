@@ -1,17 +1,21 @@
 
-import React, { useState } from 'react'
+import React, { useState , useContext} from 'react'
 import './Home.css';
 import banner from '../../assets/img/banner.png';
 import { Lunch } from '../Items/Lunch';
 import { Breakfast } from '../Items/BreakFast';
-import { useNavigate } from 'react-router-dom';
-import { singOutUser } from '../../FirebaseConfig/authContext';
-import swal from 'sweetalert';
+import {cartContext} from '../../Hooks/CartContext'
+import Navegator from '../NavBar/Navegator';
 
 
 export const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [changeState, setTChangeState] = useState(1);
+
+  const {cart} = useContext(cartContext);
+
+  
+  // console.log(cart)
 
   const toggleTab = (i) => {
     setTChangeState(i);
@@ -21,30 +25,14 @@ export const Home = () => {
     console.log(e.target.value);
   }
 
-const handleSinOff = (e) => { 
-  e.preventDefault();
-  singOutUser()
-  swal({
-  title: "Estás seguro de cerrar sesión",
-  text: "Si cierras sesión no podrás seguir tomando pedidos",
-  icon: "warning",
-  buttons: ["No", "Sí"]
-})
-.then((logout) => {
-  if (logout) {
-    swal({text:"Cerrando sesión con éxito", 
-      icon: "success",
-    });
-    navigate('/')
-  }
-});
-}
+
 
   return (
     <div className='container-home '>
+    <Navegator />
       <div>
         <img className="imgBanner" src={banner} alt="65465" />
-        <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
+       
       </div>
 
       <h1>Menu</h1>
@@ -62,16 +50,21 @@ const handleSinOff = (e) => {
       </div>
       </div>
       </div>
-      <div className='conteinerOrder'>
+      <div className='conteinerOrder' >
         <label htmlFor="nameOrder">Nombre cliente
         <input type='text' name='name' className="nameClient" onChange={handleCustomerName} />
         </label>
         <div className="waiter-order">
-
+        <ul>
+          {(cart || {}).map((item, index) => (
+            <li key={index}> {item} <button className="delete-items">x</button> </li>
+          ))}
+        </ul>
         </div>
         <label htmlFor="price-total">TOTAL=
         <textarea className="total-textarea" readOnly></textarea>
         </label>
+        <button className="sendOrder"> Enviar Orden</button>
       </div>
       
         {/* ------------obtener al hacer click el items ----------*/}

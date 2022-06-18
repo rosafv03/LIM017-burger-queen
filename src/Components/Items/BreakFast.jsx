@@ -4,17 +4,13 @@ import { itemSortbreakfast } from '../../FirebaseConfig/FirestoreDB';
 import {cartContext} from '../../Hooks/CartContext';
 
 
-export const Breakfast = (props) =>{
+export const Breakfast = () =>{
+  
     const [itemsbreakfast, setItems] = useState([]);
 
-    const {cart , addOrder} = useContext(cartContext)
+    const {addOrder} = useContext(cartContext)
 
    
-    const elemento =
-    <div> <h1> Carrito</h1>
-    <li>{cart}</li>
-    </div>;
-
   useEffect(() => {
     const fetchData = async () => {
       const itemsDB = await itemSortbreakfast();
@@ -40,8 +36,7 @@ export const Breakfast = (props) =>{
         ))}
       </>
 
-    </div><>
-        {elemento}
-      </></>
+    </div>
+      </>
   )
 }

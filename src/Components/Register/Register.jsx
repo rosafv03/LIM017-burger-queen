@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { userContext} from "../../FirebaseConfig/authContext"
+import logoB from '../../assets/img/Burguer_Queen.png';
 
 export const Register = () => {
 
@@ -28,22 +29,28 @@ export const Register = () => {
       console.log(error.code);
     }
   };
+  const styleNav = {
+    color: 'black'
+
+  }
 
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="container">
         {/* envia la informacion del formulario a handlerSubmit */}
+        <img className="imglogo" src={logoB} alt="65465" />
+      <br></br>
 
         <label className="form-label">Dirección email</label>
-        <input type="email" className="input" placeholder="ingresar email" id="email" onChange={e => setEmail(e.target.value)} required></input>
+        <input type="email" className="input" placeholder="ejemplo@gmail.com" id="email" onChange={e => setEmail(e.target.value)} required></input>
 
 
         <label className="form-label">Contraseña:</label>
-        <input type="password" className="input" placeholder="ingresar contraseña" id="password" onChange={e => setPassword(e.target.value)} required></input>
+        <input type="password" className="input" placeholder="Añade mas de 6 caracteres" id="password" onChange={e => setPassword(e.target.value)} required></input>
 
-        <p>¿Ya tienes cuenta?<a href="/"> Inicia sesión</a></p>
-        <button className='buttonRegister' type="submit" >Register</button>
+        <p>¿Ya tienes cuenta?<a href="/" style={styleNav}> Inicia sesión</a></p>
+        <button className='buttonRegister' type="submit" >Regístrate</button>
       </div>
     </form>
   )
