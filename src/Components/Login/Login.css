@@ -3,25 +3,31 @@
     /* box-sizing: border-box; */
 
 }
-.container{
+.container {
     display: block;
     text-align: center;
     font-size: 20px;
-    margin: 5%;
-    margin-left: 58px;
-    margin-right: 50px;
-    width: 90%;
-    background-color: #15181a;
+    margin: auto;
+    /* margin-left: 58px; */
+    /* margin-right: 50px; */
+    width: 45%;
+    background-color: #b52e1d;
     color: beige;
+    margin-top: 15%;
+    border-radius: 5%;
 }
-.input{
+a{
+    color: white;
+}
+.input {
     display: block;
-    width: 100%;
-    padding: .5rem .8rem .5rem .8rem;
-    margin: .9vw 0 ;
-    border:0;
+    width: 90%;
+    padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+    /* margin: 0.9vw 0; */
+    border: 0;
     border-radius: 5px;
     font-size: 20px;
+    margin: auto;
     background-color: aliceblue;
 }
 .buttonLogin, .buttonRegister{
