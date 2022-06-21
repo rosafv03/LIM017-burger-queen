@@ -26,10 +26,10 @@ function Navegator() {
       }
       
   return (
-    <nav className="navbar bg-light">
-  <form className="container-fluid justify-content-start">
-    <button className="btn btn-outline-success me-2" type="button">Cocina</button>
-    <button className="btn btn-sm btn-outline-secondary" type="button">Mesero</button>
+    <nav className="navbar">
+  <form className="container-f">
+    <button className="btn-kitchen" type="button">Cocina</button>
+    <button className="btn-m" type="button">Mesero</button>
     <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
   </form>
 </nav>

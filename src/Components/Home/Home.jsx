@@ -1,5 +1,5 @@
 
-import React, { useState , useContext} from 'react'
+import React, { useState , useContext, useEffect} from 'react'
 import './Home.css';
 import banner from '../../assets/img/banner.png';
 import { Lunch } from '../Items/Lunch';
@@ -11,15 +11,24 @@ import Navegator from '../NavBar/Navegator';
 export const Home = () => {
   // const navigate = useNavigate();
   const [changeState, setTChangeState] = useState(1);
+  
+  const [total, setTotal] = useState(0)
 
   const {cart} = useContext(cartContext);
+
+  useEffect(()=> {
+    const reduceNewO = cart.reduce((acumulador, item) => {
+      return acumulador += item.price;
+    }, 0)
+    setTotal(reduceNewO)
+  }, [cart, total]);
 
   
   // console.log(cart)
 
-  const toggleTab = (i) => {
+  function toggleTab(i) {
     setTChangeState(i);
-  };
+  }
 
   const handleCustomerName= (e) => {
     console.log(e.target.value);
@@ -57,12 +66,12 @@ export const Home = () => {
         <div className="waiter-order">
         <ul>
           {(cart || {}).map((item, index) => (
-            <li key={index}> {item} <button className="delete-items">x</button> </li>
+            <li key={index}> {item.items} {item.price} <button className="delete-items">x</button> </li>
           ))}
         </ul>
         </div>
         <label htmlFor="price-total">TOTAL=
-        <textarea className="total-textarea" readOnly></textarea>
+        <textarea className="total-textarea" value={total} readOnly></textarea>
         </label>
         <button className="sendOrder"> Enviar Orden</button>
       </div>
