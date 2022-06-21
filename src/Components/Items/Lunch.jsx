@@ -29,7 +29,7 @@ export const Lunch = () => {
       <>
         {itemsLunch.map((item, i) => (
           <div key={i}>
-            <button onClick={() => addItemsToCarts(item.items)}>
+            <button onClick={() => addItemsToCarts(item)}>
               {item.items}
               <br></br>
               {item.price} $
