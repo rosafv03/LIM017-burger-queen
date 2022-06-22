@@ -19,6 +19,7 @@ import {CartContextProvider} from "./Hooks/CartContext";
       
       <AuthProvider>
       <CartContextProvider> 
+      
       <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
