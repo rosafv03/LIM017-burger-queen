@@ -45,7 +45,6 @@ export const itemSortLuch = async() => {
         console.log(error)
     }
 }
-
 export const itemSortAdditional = async() => {
     try{
         const refDataQuery =  collection(db, "orderItems")

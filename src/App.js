@@ -18,16 +18,15 @@ import {CartContextProvider} from "./Hooks/CartContext";
       <div className="Navigation">
       
       <AuthProvider>
-      <CartContextProvider> 
-      
-      <Routes>
+        <CartContextProvider>   
+       <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
           {/* <Route path="/kitchen" element={<Kitchen />} /> */}
           <Route path="/" element={<Login />} />
-        </Routes>
-        </CartContextProvider>
-        </AuthProvider>
+       </Routes>
+         </CartContextProvider>
+      </AuthProvider>
         
       </div>
     </Router>

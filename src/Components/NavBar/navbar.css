@@ -1,5 +1,6 @@
 .logout {
     background-color: darkred;
+    width: 80%;;
 }
 
 .listNavbar {
@@ -12,3 +13,7 @@
 background:local
 }
 li.ex2:hover, li.ex2:active {font-size: 150%;}
+
+.navbarItems{
+    display: inline;
+}

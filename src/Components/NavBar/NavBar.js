@@ -28,12 +28,10 @@ function Navbar() {
       }
       
   return (
-    <nav className="NavbarItems">
-  <ul className="listNavbar">
-    <li className="listN" ><a href="#"></a>Cocina 👨‍🍳</li>
-    <li className="listN" >Home📑</li>
-  </ul>
-  <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
+    <nav className="navbarItems">
+      <button type='button'  className='logout'>Cocina</button>
+      <button type='button'  className='logout'>Home</button>
+      <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
 </nav>
   )
 }

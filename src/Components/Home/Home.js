@@ -6,8 +6,9 @@ import { Lunch } from '../Items/Lunch';
 import { Breakfast } from '../Items/BreakFast';
 import {cartContext} from '../../Hooks/CartContext'
 import NavBar from '../NavBar/NavBar'
-import { Additional } from './../Items/Additional';
+import { Additional } from '../Items/Additional';
 import swal from 'sweetalert';
+import { collectionOrder } from '../../FirebaseConfig/FirestoreDB';
 
 
 export const Home = () => {
@@ -36,6 +37,7 @@ export const Home = () => {
   const handleCustomerName= (e) => {
     console.log(e.target.value);
   }
+  
   //Eliminar productos
   const handleDelete =(i) => { 
     const cartTemp = [...cart]
@@ -44,22 +46,24 @@ export const Home = () => {
   }
   const handleSendOrder =  () => {
     // e.preventDefault()
-   swal("Pedido enviado a cocina", "Puede consultar el estado de su pedido", "success")
-      // alert('Bienvenido ' + email + 'ya puedes hacer el pedido');
-    //   console.log('usuario', email, 'logueado');
+    collectionOrder()
+      .then(() =>
+      swal("Pedido enviado a cocina", "Puede consultar el estado de su pedido", "success")
+    ).catch((error) =>
+    console.log(error))
+     
     } 
 
 
   return (
     <div className='container-home '>
-    <NavBar />
-      <div>
-  
-       
-      </div>
-
-      <h1>Menu</h1>
-      <div className='container-tabs'>
+    
+      <table className='table-container-waiter'>
+        <tr>
+        <th className='colum1'><NavBar /></th>
+          <th className='menu-items'>
+            <div className='container-tabs'>
+          <h1>Menu</h1>
       <div className="bloc-tabs">
       
       <button className={changeState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}> Desayuno</button>
@@ -83,23 +87,30 @@ export const Home = () => {
       </div>
       </div>
       </div>
+      </th>
+     <th className="menu-order">
       <div className='conteinerOrder' >
         <label htmlFor="nameOrder">Nombre cliente
         <input type='text' name='name' className="nameClient" onChange={handleCustomerName} />
+              </label>
+              <label htmlFor="table-number">N° de mesa
+        <input type='text'  className="table-number"  />
         </label>
         <div className="waiter-order">
         <ul>
           {(cart || {}).map((item, index) => (
-            <li key={index}> {item.items}     {item.price}$ <button className="delete-items" onClick={()=>handleDelete(index)} >❌</button> </li>
-          ))}
+            <li key={index}> <span className="lis-order">{item.items}  {item.price}$</span> <button className="delete-items" onClick={()=>handleDelete(index)} >❌</button></li>
+            ))}
         </ul>
         </div>
         <label htmlFor="price-total">TOTAL=
         <textarea className="total-textarea" value={total} readOnly></textarea>
         </label>
         <button className="sendOrder" onClick={handleSendOrder}> Enviar Orden</button>
-      </div>
-      
+            </div>
+            </th>
+          </tr>
+      </table>
         {/* ------------obtener al hacer click el items ----------*/}
         {/* ------------tener en cuenta los items para sumarlos y no repetirlos ----------*/}
         {/* ------------mostrar el contenido de la orden----------*/}
