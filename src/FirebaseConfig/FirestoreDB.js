@@ -1,6 +1,6 @@
 
 import { initializeApp } from 'firebase/app';
-import {getFirestore, collection, getDocs, where, query} from 'firebase/firestore';
+import {getFirestore, collection, getDocs, where, query, addDoc} from 'firebase/firestore';
 import { firebaseConfig } from './init';
 
 
@@ -45,7 +45,6 @@ export const itemSortLuch = async() => {
         console.log(error)
     }
 }
-
 export const itemSortAdditional = async() => {
     try{
         const refDataQuery =  collection(db, "orderItems")
@@ -61,6 +60,21 @@ export const itemSortAdditional = async() => {
         /* console.log(docs) */
     }
     catch  (error){
+        console.log(error)
+    }
+}
+
+export const collectionOrder = async (collectionOrder) => {
+    try { 
+        const docRef = await addDoc(collection(db, "order"), {
+    name: "nameUser",
+    orderItems: collectionOrder,
+    date: new Date().toLocaleDateString('es'),
+    hora: new Date().toLocaleTimeString('es'),
+    
+  });
+  console.log('Document written with ID: ', docRef.id)
+    }catch (error){
         console.log(error)
     }
 }

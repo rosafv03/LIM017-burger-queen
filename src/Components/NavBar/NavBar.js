@@ -1,9 +1,11 @@
 import React from 'react'
+import './navbar.css';
 import { singOutUser } from '../../FirebaseConfig/authContext';
 import swal from 'sweetalert';
 import { useNavigate,  } from 'react-router-dom';
+// import {Kitchen } from '../Kitchen/Kitchen'
 
-function Navegator() {
+function Navbar() {
     const navigate = useNavigate();
 
     const handleSinOff = (e) => { 
@@ -26,14 +28,12 @@ function Navegator() {
       }
       
   return (
-    <nav className="navbar">
-  <form className="container-f">
-    <button className="btn-kitchen" type="button">Cocina</button>
-    <button className="btn-m" type="button">Mesero</button>
-    <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
-  </form>
+    <nav className="navbarItems">
+      <button type='button'  className='logout'>Cocina</button>
+      <button type='button'  className='logout'>Home</button>
+      <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
 </nav>
   )
 }
 
-export default Navegator
+export default Navbar;

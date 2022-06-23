@@ -1,42 +1,18 @@
-body{
-    background-color:#15181a;
-    background-image: url(../../assets/img/burguer1.jpg) ;
-    background-attachment: fixed;
-    background-position:left;
-    margin:0;
-    background-color: rgba(100%,0%,0%,.8);
-    background-size: cover;
-    /* color: white ; */
+body {
+  background-color: #15181a;
+  /* background-image: url(../../assets/img/burguer1.jpg); */
+  /* background-attachment: fixed;
+  background-position: left; */
+  /* margin: 0; */
+  /* background-color: rgba(100%, 0%, 0%, .8);
+  background-size: cover; */
+  /* color: white ; */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
-button{
-    background-color: #f09014;
-    border-radius: 4px;
-    border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #ffffff;
-    font: normal 400 16px/16px Open sans;
-    min-height: 35px;
-    min-width: 100px;
-    padding: 10px 25px;
-    margin: 5px;
-}
-.imgBanner{
-    width: 100%;
-}
-ul {
-  background: #232f3b09;
-  padding: 20px;
-}
-.delete-items{
-  /* background-image: url(../../assets/img/cancelar.png); */
-  background-color: rgba(243, 46, 46, 0.774);
-  color: white;
-  border-radius:50%;
-  width:20%;
-  height:20%;
-}
-.sendOrder{
-  background-color: #13b952;
+
+button {
+  background-color:#E96224;
   border-radius: 4px;
   border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -46,17 +22,74 @@ ul {
   min-width: 100px;
   padding: 10px 25px;
   margin: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.imgBanner {
+  width: 100%;
+}
+
+ul {
+  background: #232f3b09;
+  padding: 20px;
+  margin: 0;
+}
+
+.delete-items {
+    /* background-image: url(../../assets/img/cancelar.png); */
+    /* background-color: rgba(243, 46, 46, 0.774); */
+    color: #fd0d0d;
+    /* border-radius: 50%; */
+    /* width: 20%; */
+    /* height: 20%; */
+    font-size: x-large;
+    display: inline-flex;
+    background: none;
+    box-shadow: none;
+}
+.price-total{
+border-color: 1px solid white;
+}
+
+
+.sendOrder {
+  background-color: #13b952;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  color: #ffffff;
+  font: normal 400 16px/16px Open sans;
+  min-height: 35px;
+  min-width: 80px;
+  max-width: 200px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  display: inline-grid;
+  padding: 10px 25px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.containerItems {
+  display: inline;
 }
 
 ul li {
-  background: #f09014;
+  /* background: #000000; */
   color: rgb(255, 255, 255);
   margin: 5px;
+  text-align: initial;
   display: inherit;
+  display: flex;
+  justify-content: space-between;
 }
-.imglogo{
+
+
+.imglogo {
   width: 80%;
 }
+
 a {
   outline: none;
   text-decoration: none;
@@ -86,12 +119,15 @@ a:active {
   background: #265301;
   color: #CDFEAA;
 }
-h1{
-    color: #ffffff;
+
+h1 {
+  color: #ffffff;
 }
-.container{
-    width: 80%;
+
+.container {
+  width: 80%;
 }
+
 .container-home {
   background-color: #15181a;
   /* display: block; */
@@ -108,91 +144,132 @@ h1{
   /* margin-top: 15%; */
   /* border-radius: 5%; */
 }
+
 .container-tabs {
+  
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 60%;
+    /* width: 60%; */
     height: auto;
-    background-color:#15181a;
-    margin: 100px auto 0;
+    background-color: #15181a;
+    /* margin: 100px auto 0; */
     word-break: break-all;
     border: 1px solid rgba(255, 250, 250, 0.774);
-  }
+}
+ 
+
+.bloc-tabs {
+  display: flex;
+}
+
+.tabs {
+
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  background: rgba(153, 148, 148, 0.377);
+  cursor: pointer;
+  /* box-sizing: content-box; */
+  position: relative;
+  outline: none;
+}
+
+.tabs:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.active-tabs {
+  background: rgb(197, 72, 14);
+  border-bottom: 1px solid transparent;
+}
+
+
+button {
+  border: none;
+
+}
+
+.content-tabs {
+  flex-grow: 1;
+}
+
+.content {
+  background-color: #15181a;
+  padding: 20px;
+
+  display: none;
+}
+
+.content h2 {
+  padding: 0px 0 5px 0px;
+}
+
+.content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+
+.content p {
+  width: 100%;
+  height: 100%;
+}
+
+.active-content {
+  display: block;
+}
+
+
+.conteinerOrder {
+  border-top: 1px solid rgb(252, 237, 237);
+  /* min-height: 50%; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 90%;
+  font-size: 17px;
+  /* height: auto; */
+  /* margin: 100px auto 0; */
+  /* word-break: break-all; */
+  margin: 5%;
+}
+.nameClient {
+  width: 60%;
+}
+
+.total-textarea {
+  resize: none;
+  margin-top: 8px;
+  width: 30px;
+  font-size: larger;
+  height: 30px;
+}
+
+.price-total {
+  margin: 8px;
+  display: flex;
+  justify-content: end;
+}
+
+.colum1{
   
-  .bloc-tabs {
-    display: flex;
-  }
-  .tabs {
-  
-    padding: 15px;
-    text-align: center;
-    width: 50%;
-    background: rgba(128, 128, 128, 0.075);
-    cursor: pointer;
-    /* box-sizing: content-box; */
-    position: relative;
-    outline: none;
-  }
-  .tabs:not(:last-child){
-    border-right: 1px solid rgba(0, 0, 0, 0.274);
-  }
-  
-  .active-tabs  {
-    background: rgb(197, 72, 14);
-    border-bottom: 1px solid transparent;
-  }
-  
-  
-  button {
-    border: none;
-    
-  }
-  .content-tabs {
-    flex-grow : 1;
-  }
-  .content {
-    background-color:#15181a;
-    padding: 20px;
-    
-    display: none;
-  }
-  .content h2 {
-    padding: 0px 0 5px 0px;
-  }
-  .content hr {
-    width: 100px;
-    height: 2px;
-    background: #222;
-    margin-bottom: 5px;
-  }
-  .content p {
-    width: 100%;
-    height: 100%;
-  }
-  .active-content {
-    display: block;
-  }
-  .conteinerOrder{
-     border-top: 1px solid rgb(252, 237, 237); 
-    /* min-height: 50%; */
-    display: flex;
-     flex-direction: column; 
-    position: relative;
-    width: 60%;
-    height: auto;
-    margin: 100px auto 0;
-    word-break: break-all;
-  }
-  .nameClient{
-    width: 60%;
-  }
-  .total-textarea{
-    resize: none;
-    margin-top: 8px;
-  }
-  .price-total{
-    margin: 8px;
-    display: flex;
-    justify-content:end;
-  }
+    background-image: url(../../assets/img/burguer.jpg);
+    width: 15%;
+}
+
+.menu-items{
+  width: 40%;
+}
+.menu-order{
+  width:45%;
+  margin:0px;
+}
+.table-container-waiter{
+  width: 100%;
+  height: 100%;
+}
+.nameOrder{
+  margin: 0px;
+}
