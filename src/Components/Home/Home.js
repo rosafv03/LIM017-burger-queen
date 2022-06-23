@@ -59,7 +59,7 @@ export const Home = () => {
     <div className='container-home '>
     
       <table className='table-container-waiter'>
-        <tr>
+        <tbody>
         <th className='colum1'><NavBar /></th>
           <th className='menu-items'>
             <div className='container-tabs'>
@@ -109,7 +109,7 @@ export const Home = () => {
         <button className="sendOrder" onClick={handleSendOrder}> Enviar Orden</button>
             </div>
             </th>
-          </tr>
+            </tbody>
       </table>
         {/* ------------obtener al hacer click el items ----------*/}
         {/* ------------tener en cuenta los items para sumarlos y no repetirlos ----------*/}
