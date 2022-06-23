@@ -7,18 +7,25 @@ import { Breakfast } from '../Items/BreakFast';
 import {cartContext} from '../../Hooks/CartContext'
 import NavBar from '../NavBar/NavBar'
 import { Additional } from '../Items/Additional';
-import swal from 'sweetalert';
-import { collectionOrder } from '../../FirebaseConfig/FirestoreDB';
+ import swal from 'sweetalert';
+/*import { collectionOrder } from '../../FirebaseConfig/FirestoreDB';
+ */
+import {
+  addDoc,
+  collection,
+  Timestamp,
+}
+  from "firebase/firestore";
+  import { db } from '../../FirebaseConfig/FirestoreDB';
 
+import { useNavigate,  } from 'react-router-dom';
 
 export const Home = () => {
   // const navigate = useNavigate();
   const [changeState, setTChangeState] = useState(1);
-  
   const [total, setTotal] = useState(0)
-
-  const {cart, setCart} = useContext(cartContext);
-
+  const {cart, setCart,cliente, setCliente} = useContext(cartContext);
+const navigate=useNavigate;
 
   useEffect(()=> {
     const reduceNewO = cart.reduce((acumulador, item) => {
@@ -27,15 +34,26 @@ export const Home = () => {
     setTotal(reduceNewO)
   }, [cart, total]);
 
-  
-  // console.log(cart)
-
   function toggleTab(i) {
     setTChangeState(i);
   }
 
   const handleCustomerName= (e) => {
-    console.log(e.target.value);
+    setCliente(e.target.value);
+  }
+
+  // funcion para enviar pedido
+  const handleSendOrder = async () => {
+    await addDoc(collection(db, "order"),
+    {
+      Cliente: cliente || null,
+      Pedido: cart,
+     // orden: orden,
+      status: "Pendiente",
+      date: Timestamp.fromDate(new Date()),
+    } );
+    swal("Pedido enviado a cocina", "Puede consultar el estado de su pedido", "success")
+    navigate('./kitchen')
   }
   
   //Eliminar productos
@@ -44,15 +62,13 @@ export const Home = () => {
     cartTemp.splice(i , 1)
     setCart(cartTemp)
   }
-  const handleSendOrder =  () => {
-    // e.preventDefault()
+/*   const handleSendOrder =  () => {
     collectionOrder()
       .then(() =>
       swal("Pedido enviado a cocina", "Puede consultar el estado de su pedido", "success")
     ).catch((error) =>
     console.log(error))
-     
-    } 
+    }  */
 
 
   return (
@@ -91,7 +107,7 @@ export const Home = () => {
      <th className="menu-order">
       <div className='conteinerOrder' >
         <label htmlFor="nameOrder">Nombre cliente
-        <input type='text' name='name' className="nameClient" onChange={handleCustomerName} />
+        <input type='text' name='name' className="nameClient" defaultValue={cliente} onChange={handleCustomerName} />
               </label>
               <label htmlFor="table-number">N° de mesa
         <input type='text'  className="table-number"  />
