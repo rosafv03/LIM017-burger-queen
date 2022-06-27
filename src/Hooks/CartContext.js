@@ -5,12 +5,15 @@ export const cartContext = createContext()
 export function CartContextProvider(props) {
   //estado del carrito
   const [cart, setCart] = useState([])
+  const [cliente, setCliente ] = useState('');
+/*   const { orden, setOrden } = useContext(UserContent); */
+
 
   const addOrder = (newOrder) => {
     setCart([...cart,  {...newOrder, quantity:1}])
   }
   return (
-    <cartContext.Provider value={{ cart, setCart, addOrder }}>{props.children}</cartContext.Provider>
+    <cartContext.Provider value={{ cart, setCart, addOrder,cliente,setCliente }}>{props.children}</cartContext.Provider>
   )
 }
 
