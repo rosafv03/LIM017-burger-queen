@@ -8,6 +8,10 @@ import { useNavigate,  } from 'react-router-dom';
 function Navbar() {
     const navigate = useNavigate();
 
+    const handleKitchen =()=>{
+      navigate('/kitchen')
+    }
+
     const handleSinOff = (e) => { 
         e.preventDefault();
         singOutUser()
@@ -29,7 +33,7 @@ function Navbar() {
       
   return (
     <nav className="navbarItems">
-      <button type='button'  className='logout'>Cocina</button>
+      <button type='button'  className='logout'  onClick={handleKitchen}>Cocina</button>
       <button type='button'  className='logout'>Home</button>
       <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
 </nav>

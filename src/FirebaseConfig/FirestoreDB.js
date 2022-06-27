@@ -64,7 +64,7 @@ export const itemSortAdditional = async() => {
     }
 }
 
-export const collectionOrder = async (collectionOrder) => {
+/* export const collectionOrder = async (collectionOrder) => {
     try { 
         const docRef = await addDoc(collection(db, "order"), {
     name: "nameUser",
@@ -77,4 +77,4 @@ export const collectionOrder = async (collectionOrder) => {
     }catch (error){
         console.log(error)
     }
-}
+} */
