@@ -27,11 +27,13 @@ export const Breakfast = () => {
 
       <>
         {itemsbreakfast.map((item, i) => (
-          <button key={i} onClick={() => addItemsToCarts(item)}>
+          <div key={i}>
+          <button onClick={() => addItemsToCarts(item)}>
             {item.items}
             <br></br>
             {item.price} $
           </button>
+          </div>
         ))}
       </>
 
