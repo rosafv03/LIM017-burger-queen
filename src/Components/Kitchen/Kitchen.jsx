@@ -1,6 +1,7 @@
 
-import { useContext,useEffect } from "react"
-import { userContext } from '../../FirebaseConfig/authContext';
+import React from 'react'
+// import { userContext } from '../../FirebaseConfig/authContext';
+import Navbar from "../NavBar/NavBar";
 
 /* import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../FirebaseConfig/FirestoreDB"; */
@@ -8,8 +9,8 @@ import { db } from "../../FirebaseConfig/FirestoreDB"; */
 
 
 export const Kitchen = () => {
-
-    const { user, singOutUser } = useContext(userContext);
+  
+    // const { user, singOutUser } = useContext(userContext);
     //useEffect(() => { (async() => {await ….})() }, []);
 
 
@@ -23,22 +24,8 @@ export const Kitchen = () => {
         });
     }, []);} */
 
-const hadleClickLogout = async () => {
-    try {
-        await singOutUser();
-        console.log('cerrar sesión', user)
-    } catch (error) {
-        console.log(error.code)
-    }
-};
-return (
 
-    /*         <table className='table-container-waiter'>
-            <tbody> <th className='colum1'><NavBar /></th>
-            </tbody>
-            </table> */
-    <div> <h1>Cocina</h1>
-        <button onClick={hadleClickLogout}></button>
-    </div>
+    return (
+        <Navbar />
 )
 }
