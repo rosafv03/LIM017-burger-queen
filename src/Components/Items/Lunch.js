@@ -2,7 +2,7 @@
 import React, { useEffect ,useState, useContext} from 'react'
 import { itemSortLuch } from '../../FirebaseConfig/FirestoreDB';
 // import { useFirestore } from '../hooks/FirestoreConfig.js';
-import {cartContext} from '../../Hooks/CartContext'
+import {cartContext} from '../../Context/CartContext'
 
 
 export const Lunch = () => {
@@ -14,7 +14,7 @@ export const Lunch = () => {
   useEffect(() => {
     const fetchData = async () => {
       const itemsDB = await itemSortLuch();
-      console.log('trayendo items', itemsDB)
+      // console.log('trayendo items', itemsDB)
       setItemsLunch(itemsDB)
     }
     fetchData();

@@ -1,9 +1,9 @@
 import './Login.css';
 import { useContext, useState } from 'react';
-import { userContext } from '../../FirebaseConfig/authContext';
+import { userContext } from '../../Context/authContext';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
-import logoB from '../../assets/img/Burguer_Queen.png';
+import logoB from '../../assets/img/Burguer_Queen.png'
 
 export const Login = () => {
   const {loginUser} = useContext(userContext);

@@ -1,6 +1,6 @@
 import React from 'react'
 import './navbar.css';
-import { singOutUser } from '../../FirebaseConfig/authContext';
+import { singOutUser } from '../../Context/authContext';
 import swal from 'sweetalert';
 import { useNavigate,  } from 'react-router-dom';
 // import {Kitchen } from '../Kitchen/Kitchen'
@@ -10,7 +10,10 @@ function Navbar() {
 
     const handleKitchen =()=>{
       navigate('/kitchen')
-    }
+  }
+  const handleHome =()=>{
+    navigate('/home')
+  }
 
     const handleSinOff = (e) => { 
         e.preventDefault();
@@ -34,7 +37,7 @@ function Navbar() {
   return (
     <nav className="navbarItems">
       <button type='button'  className='logout'  onClick={handleKitchen}>Cocina</button>
-      <button type='button'  className='logout'>Home</button>
+      <button type='button'  className='logout' onClick={handleHome}>Home</button>
       <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
 </nav>
   )

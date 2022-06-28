@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 // import { useAuth } from "../context/authContext.js";
 // import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
-import { userContext} from "../../FirebaseConfig/authContext"
+import { userContext} from "../../Context/authContext"
 import logoB from '../../assets/img/Burguer_Queen.png';
 
 export const Register = () => {
