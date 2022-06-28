@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { itemSortAdditional } from '../../FirebaseConfig/FirestoreDB';
-import { cartContext } from '../../Hooks/CartContext';
+import { cartContext } from '../../Context/CartContext';
 
 
 export const Additional = () => {

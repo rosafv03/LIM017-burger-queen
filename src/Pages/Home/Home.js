@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./Home.css";
 // import banner from '../../assets/img/banner.png';
-import { Lunch } from "../Items/Lunch";
-import { Breakfast } from "../Items/BreakFast";
-import { cartContext } from "../../Hooks/CartContext";
-import NavBar from "../NavBar/NavBar";
-import { Additional } from "../Items/Additional";
+import { Lunch } from "../../Components/Items/Lunch";
+import { Breakfast } from "../../Components/Items/BreakFast"
+import { cartContext } from "../../Context/CartContext";
+import NavBar from "../../Components/NavBar/NavBar";
+import { Additional } from "../../Components//Items/Additional";
 import swal from "sweetalert";
 /*import { collectionOrder } from '../../FirebaseConfig/FirestoreDB';
  */
@@ -18,7 +18,7 @@ export const Home = () => {
   // const navigate = useNavigate();
   const [changeState, setTChangeState] = useState(1);
   const [total, setTotal] = useState(0);
-  const { cart, setCart, customer, setCustomer } = useContext(cartContext);
+  const { cart, setCart, customer, setCustomer, table, setTable } = useContext(cartContext);
   const navigate = useNavigate;
 
   useEffect(() => {
@@ -35,11 +35,15 @@ export const Home = () => {
   const handleCustomerName = (e) => {
    setCustomer(e.target.value);
   };
+  const handleNumberTable = (e) => {
+    setTable(e.target.value);
+   };
 
   // funcion para enviar pedido
   const handleSendOrder = async () => {
     await addDoc(collection(db, "order"), {
       customer: customer || null,
+      mesa: table|| null, 
       pedido: cart,
       // orden: orden,
       status: "Pendiente",
@@ -156,6 +160,8 @@ export const Home = () => {
                   type="number"
                   className="table-number"
                   placeholder="N° Mesa"
+                  defaultValue={table}
+                  onChange={handleNumberTable}
                 />
                 <br></br>
                 <span>Pedido:</span>

@@ -7,6 +7,7 @@ export function CartContextProvider(props) {
   //estado del carrito
   const [cart, setCart] = useState([]);
   const [customer, setCustomer] = useState("");
+  const [table, setTable] = useState("");
   /*   const { orden, setOrden } = useContext(UserContent); */
 
   const addOrder = (newOrder) => {
@@ -14,7 +15,7 @@ export function CartContextProvider(props) {
   };
   return (
     <cartContext.Provider
-      value={{ cart, setCart, addOrder, customer, setCustomer }}
+      value={{ cart, setCart, addOrder, customer, setCustomer,table, setTable }}
     >
       {props.children}
     </cartContext.Provider>

@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./Components/Home/Home";
-import { Kitchen } from "./Components/Kitchen/Kitchen";
-import { Login } from "./Components/Login/Login";
-import { Register } from "./Components/Register/Register";
-import { AuthProvider } from "./FirebaseConfig/authContext";
-import { CartContextProvider } from "./Hooks/CartContext";
+import { Home } from "./Pages/Home/Home";
+import { Kitchen } from "./Pages/Kitchen/Kitchen";
+import { Login } from "./Pages/Login/Login";
+import { Register } from "./Pages/Register/Register";
+import { AuthProvider } from "./Context/authContext";
+import { CartContextProvider } from "./Context/CartContext";
 
 function Navigation() {
   return (

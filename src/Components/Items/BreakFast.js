@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { itemSortbreakfast } from '../../FirebaseConfig/FirestoreDB';
-import { cartContext } from '../../Hooks/CartContext';
+import { cartContext } from '../../Context/CartContext';
 
 
 export const Breakfast = () => {
@@ -13,7 +13,7 @@ export const Breakfast = () => {
   useEffect(() => {
     const fetchData = async () => {
       const itemsDB = await itemSortbreakfast();
-      console.log('trayendo items', itemsDB)
+      // console.log('trayendo items', itemsDB)
       setItems(itemsDB)
     }
     fetchData();
