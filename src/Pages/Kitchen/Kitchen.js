@@ -7,14 +7,14 @@ import Navbar from "../../Components/NavBar/NavBar";
 export const Kitchen = () => {
   // const { user, singOutUser } = useContext(userContext);
   //useEffect(() => { (async() => {await ….})() }, []);
-  const [order, setOrder] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const querySnapshot = await getDocs(collection(db, "order"));
       querySnapshot.forEach((doc) => {
         const dataOrder = doc.data();
-        setOrder(dataOrder);
+        setOrders(dataOrder);
         console.log(dataOrder);
         // doc.data() is never undefined for query doc snapshots
         
@@ -22,7 +22,7 @@ export const Kitchen = () => {
     };
     fetchData();
   }, [ ]);
-  console.log(order);
+  console.log(orders);
   // /* useEffect(() => {
   //     (async() => {
   //     const querySnapshot = await getDocs(collection(db, "order"));

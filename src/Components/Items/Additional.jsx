@@ -26,10 +26,8 @@ export const Additional = () => {
 
       <>
         {itemsAdditional.map((item, i) => (
-          <button key={i} onClick={() => addItemsToCarts(item)}>
-            {item.items}
-            <br></br>
-            {item.price} $
+          <button className="items-btn" key={i} onClick={() => addItemsToCarts(item)}>
+             {item.items} {" "}{item.price} $
           </button>
         ))}
       </>

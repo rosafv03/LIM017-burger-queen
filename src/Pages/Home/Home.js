@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./Home.css";
-// import banner from '../../assets/img/banner.png';
+
 import { Lunch } from "../../Components/Items/Lunch";
 import { Breakfast } from "../../Components/Items/BreakFast"
 import { cartContext } from "../../Context/CartContext";
@@ -169,10 +169,10 @@ export const Home = () => {
                   <ul>
                     {(cart || {}).map((item, index) => (
                       <li key={index}>
-                        {" "}
+                       
                         <span className="lis-order">
-                          {item.items} {item.price}$
-                        </span>{" "}
+                          {item.items}{" "}{item.price}$
+                        </span>
                         <button
                           className="delete-items"
                           onClick={() => handleDelete(index)}
@@ -183,12 +183,16 @@ export const Home = () => {
                     ))}
                   </ul>
                 </div>
+                </div>
+                <section className="section-total">
                 <span className="price-total">TOTAL={total}$</span>
                 <br></br>
                 <button className="sendOrder" onClick={handleSendOrder}>
                   Enviar Orden
                 </button>
-              </div>
+                </section>
+                
+              
             </td>
           </tr>
         </tbody>
