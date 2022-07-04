@@ -1,36 +1,57 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState  } from "react";
 // import { userContext } from '../../FirebaseConfig/authContext';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../FirebaseConfig/FirestoreDB";
 import Navbar from "../../Components/NavBar/NavBar";
-
+// import { cartContext } from "../../Context/CartContext";
+/* import "./kitchen.css"; */
 export const Kitchen = () => {
   // const { user, singOutUser } = useContext(userContext);
   //useEffect(() => { (async() => {await ….})() }, []);
+  // const {order, setOrder} = useContext(cartContext);
   const [orders, setOrders] = useState([]);
+
 
   useEffect(() => {
     const fetchData = async () => {
+      let array=[];
       const querySnapshot = await getDocs(collection(db, "order"));
       querySnapshot.forEach((doc) => {
-        const dataOrder = doc.data();
-        setOrders(dataOrder);
-        console.log(dataOrder);
+        const dataOrder = {...doc.data()};
+        //  dataOrder.pedido=doc.id;
+        array.push(dataOrder)
+
+      /*   setOrders(dataOrder);
+        array+=[dataOrder.customer] */
+        //setOrders(array);
+       // console.log(dataOrder);
+        //console.log(array);
         // doc.data() is never undefined for query doc snapshots
-        
+        // console.log(array);
+        setOrders(array);
+       
       });
+      return array; 
     };
     fetchData();
-  }, [ ]);
-  console.log(orders);
-  // /* useEffect(() => {
-  //     (async() => {
+  }, []);
+ 
+  
+
+
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
   //     const querySnapshot = await getDocs(collection(db, "order"));
   //     querySnapshot.forEach((doc) => {
-  //         // doc.data() is never undefined for query doc snapshots
-  //         console.log(doc.id, " => ", doc.data());
+  //       const dataOrder = doc.data();
+  //       setOrders(dataOrder);
+  //       console.log(dataOrder);
   //     });
-  // }, []);} */
+  //   };
+  //   fetchData();
+  // }, []);
+  // console.log(orders.customer);
 
   return (
     <>
@@ -48,14 +69,33 @@ export const Kitchen = () => {
               <Navbar />
             </td>
             <td>
-              <span> Pedidos</span>
+              <div className="targetOrder"> Pedidos<br></br>
+                {console.log(orders)}
+                {orders.map((item, i) => (
+          <div key={i}>
+          <button className="items-btn" >
+                      Mesa: {item.mesa} <br></br>
+                      Cliente: {item.customer}<br></br>
+                      Estado del pedido:{item.status}
+                      {console.log(item.pedido)}
+                      
+                    </button>
+                    {item.pedido?.map((pedido, i) => (
+                        <ul key={i} >
+                          <li> {pedido.items}</li>
+                        </ul>
+                      ))}
+                   
+                    </div>                      ))}
+
+              
+
+              </div>
               {/* <ul>
-                    {order.map((order, index) => (
-                      <li key={index}>
-                        {order.mesa}
-                      </li>
-                    ))}
-                  </ul> */}
+                {orders.map((dataOrder, index) => (
+                  <li key={index}>{dataOrder.customer}</li>
+                ))}
+              </ul> */}
             </td>
           </tr>
         </tbody>
