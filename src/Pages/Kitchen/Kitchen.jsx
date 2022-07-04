@@ -8,6 +8,17 @@ import "./kitchen.css";
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
 
+  const changeStatus = async (id) => {
+    try {
+      const idRef = doc(db, "order", id);
+      await updateDoc(idRef, {
+        status: "listo para entregar",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       let array = [];
@@ -25,16 +36,6 @@ export const Kitchen = () => {
     fetchData();
   }, []);
 
-  const changeStatus = async (id) => {
-    try {
-      const idRef = doc(db, "order", id);
-      await updateDoc(idRef, {
-        status: "listo para entregar",
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <>
