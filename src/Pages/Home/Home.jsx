@@ -5,7 +5,7 @@ import { Lunch } from "../../Components/Items/Lunch";
 import { Breakfast } from "../../Components/Items/BreakFast"
 import { cartContext } from "../../Context/CartContext";
 import NavBar from "../../Components/NavBar/NavBar";
-import { Additional } from "../../Components//Items/Additional";
+import { Additional } from "../../Components/Items/Additional";
 import swal from "sweetalert";
 /*import { collectionOrder } from '../../FirebaseConfig/FirestoreDB';
  */
@@ -48,6 +48,7 @@ export const Home = () => {
       // orden: orden,
       status: "Pendiente",
       date: Timestamp.fromDate(new Date()),
+      total: total || null,
     });
     swal(
       "Pedido enviado a cocina",
