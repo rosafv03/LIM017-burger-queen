@@ -3,17 +3,27 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../FirebaseConfig/FirestoreDB";
 import Navbar from "../../Components/NavBar/NavBar";
+import swal from "sweetalert";
 // import { cartContext } from "../../Context/CartContext";
 import "./kitchen.css";
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
+  const [orderUpdate, setOrderUpdate]  = useState([]);
 
   const changeStatus = async (id) => {
     try {
       const idRef = doc(db, "order", id);
-      await updateDoc(idRef, {
-        status: "listo para entregar",
-      });
+      const changeRef =  await updateDoc(idRef, {
+        status: "Atendido", 
+      })
+      const attended=
+      swal(
+        "Su pedido ya ha sido atendido",
+        "",
+        "warning"
+      );
+       // eslint-disable-next-line no-unused-expressions
+       idRef.status === "Pendiente" ? changeRef :  attended
     } catch (error) {
       console.log(error);
     }
@@ -75,7 +85,7 @@ export const Kitchen = () => {
                       Estado del pedido:
                       <button
                         onClick={() => changeStatus(item.id)}
-                        className="change-status"
+                        className={item.status === 'Pendiente' ? "statusColor1" : "statusColor2"}
                       >
                         {item.status}
                       </button>

@@ -35,3 +35,24 @@ width:30%;
 .order-information{
   width: 90%;
 }
+
+.statusColor1,
+.statusColor2 {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px 5px 0px;
+    font-size: 25px;
+}
+
+.statusColor1 {
+    color: white;
+    background-color:orangered;
+}
+
+.statusColor2 {
+    color: green;
+    background-color: #ecebe5;
+    font-size:20px;
+    border: none;
+
+}
