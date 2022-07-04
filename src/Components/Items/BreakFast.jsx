@@ -6,19 +6,21 @@ import { cartContext } from '../../Context/CartContext';
 export const Breakfast = () => {
 
   const [itemsbreakfast, setItems] = useState([]);
-
+  
   const { addOrder } = useContext(cartContext)
 
 
   useEffect(() => {
     const fetchData = async () => {
       const itemsDB = await itemSortbreakfast();
-      // console.log('trayendo items', itemsDB)
+       console.log('trayendo items', itemsDB)
       setItems(itemsDB)
     }
     fetchData();
+    
   }, []);
-
+  console.log(itemsbreakfast);
+  
   const addItemsToCarts = (item) => {
     addOrder(item)
   }

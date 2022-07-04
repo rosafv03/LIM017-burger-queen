@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react";
 
-
 export const cartContext = createContext();
 
 export function CartContextProvider(props) {
@@ -8,7 +7,7 @@ export function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
   const [customer, setCustomer] = useState("");
   const [table, setTable] = useState("");
-   const [orden, setOrden] = useState([]);
+  const [orden, setOrden] = useState([]);
   /*   const { orden, setOrden } = useContext(UserContent); */
 
   const addOrder = (newOrder) => {
@@ -16,7 +15,17 @@ export function CartContextProvider(props) {
   };
   return (
     <cartContext.Provider
-      value={{ cart, setCart, addOrder, customer, setCustomer,table, setTable, orden, setOrden }}
+      value={{
+        cart,
+        setCart,
+        addOrder,
+        customer,
+        setCustomer,
+        table,
+        setTable,
+        orden,
+        setOrden,
+      }}
     >
       {props.children}
     </cartContext.Provider>
