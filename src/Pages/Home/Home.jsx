@@ -191,128 +191,20 @@ export const Home = () => {
                 <button className="sendOrder" onClick={handleSendOrder}>
                   Enviar Orden
                 </button>
-                </section>
-                
-              
-            </td>
+                </section></td>
           </tr>
         </tbody>
-
-        {/* <tbody>
-          <th className="colum1">
-            <NavBar />
-          </th>
-          <th className="menu-items">
-            <div className="container-tabs">
-              <h1>Menu</h1>
-              <div className="bloc-tabs">
-                <button
-                  className={changeState === 1 ? "tabs active-tabs" : "tabs"}
-                  onClick={() => toggleTab(1)}
-                >
-                  {" "}
-                  Desayuno
-                </button>
-
-                <button
-                  className={changeState === 2 ? "tabs active-tabs" : "tabs"}
-                  onClick={() => toggleTab(2)}
-                >
-                  {" "}
-                  Almuerzo
-                </button>
-
-                <button
-                  className={changeState === 3 ? "tabs active-tabs" : "tabs"}
-                  onClick={() => toggleTab(3)}
-                >
-                  {" "}
-                  Adicional
-                </button>
-              </div>
-              <div className="containerItems">
-                <div className="content-tabs">
-                  <div
-                    className={
-                      changeState === 1 ? "content  active-content" : "content"
-                    }
-                  >
-                    <Breakfast />
-                  </div>
-                  <div
-                    className={
-                      changeState === 2 ? "content  active-content" : "content"
-                    }
-                  >
-                    <Lunch />
-                  </div>
-                  <div
-                    className={
-                      changeState === 3 ? "content  active-content" : "content"
-                    }
-                  >
-                    <Additional />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </th>
-          <th className="menu-order">
-            <div className="conteinerOrder">
-              <label htmlFor="nameOrder">
-                Nombre cliente
-                <input
-                  type="text"
-                  name="name"
-                  className="nameClient"
-                  defaultValue={cliente}
-                  onChange={handleCustomerName}
-                />
-              </label>
-              <label htmlFor="table-number">
-                N° de mesa
-                <input type="text" className="table-number" />
-              </label>
-              <div className="waiter-order">
-                <ul>
-                  {(cart || {}).map((item, index) => (
-                    <li key={index}>
-                      {" "}
-                      <span className="lis-order">
-                        {item.items} {item.price}$
-                      </span>{" "}
-                      <button
-                        className="delete-items"
-                        onClick={() => handleDelete(index)}
-                      >
-                        ❌
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <label htmlFor="price-total">
-                TOTAL=
-                <textarea
-                  className="total-textarea"
-                  value={total}
-                  readOnly
-                ></textarea>
-              </label>
-              <button className="sendOrder" onClick={handleSendOrder}>
-                {" "}
-                Enviar Orden
-              </button>
-            </div>
-          </th>
-        </tbody> */}
       </table>
-      {/* ------------obtener al hacer click el items ----------*/}
-      {/* ------------tener en cuenta los items para sumarlos y no repetirlos ----------*/}
-      {/* ------------mostrar el contenido de la orden----------*/}
-      {/* ------------eliminar items de a----------*/}
-      {/* ------------crear boton que envie la lista a cocina----------*/}
-      {/* ------------reiniciar el campo que ya ha sido enviado a concina----------*/}
+   
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
