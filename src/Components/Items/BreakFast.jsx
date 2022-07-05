@@ -32,6 +32,7 @@ export const Breakfast = () => {
           <div key={i}>
           <button className="items-btn" onClick={() => addItemsToCarts(item)}>
             {item.items} {" "}{item.price} $
+            <img className='img-product' src={item.url} alt='item' width='100px' />
           </button>
           </div>
         ))}
