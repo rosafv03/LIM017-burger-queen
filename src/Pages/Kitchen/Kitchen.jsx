@@ -4,11 +4,10 @@ import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../FirebaseConfig/FirestoreDB";
 import Navbar from "../../Components/NavBar/NavBar";
 import swal from "sweetalert";
-// import { cartContext } from "../../Context/CartContext";
 import "./kitchen.css";
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
-  const [orderUpdate, setOrderUpdate]  = useState([]);
+  // const [orderUpdate, setOrderUpdate]  = useState([]);
 
   const changeStatus = async (id) => {
     try {
