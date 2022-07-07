@@ -113,7 +113,7 @@ console.log(trabajador)
                       { trabajador==='cocina@gmail.com' ? 
                       <button  onClick={() => changeStatusKitchen(item.id)} > {item.status}</button> 
                       :
-                      <button disabled={item.status==='Pendiente'}  onClick={() => changeStatusMesero(item.id)} > {item.status}</button> 
+                      <button disabled={item.status==='Pendiente' }  onClick={() => changeStatusMesero(item.id)} > {item.status}</button> 
 
                       }
 </div>
