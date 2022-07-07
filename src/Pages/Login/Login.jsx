@@ -17,6 +17,7 @@ export const Login = () => {
     e.preventDefault()
     try {
       await loginUser(email, password)
+      localStorage.setItem('userEmail', email);
       navigate('/home')
       //------------AGREGAR CONDICION QUE SI SE EJECUTA EL LOGIN PASE A LA PAGINA HOME-------------------|
       swal("Bienvenido!", email + " Ya puede realizar tu pedido", "success")
