@@ -1,12 +1,13 @@
 .logout {
-    background-color: #ffffff;
-    color: black;
+    color: #ffffff;
     width: 80%;
     /* margin: 50px; */
     margin-top: 50px;
     padding: 50px;
     border-radius: 50%;
-    font-size: large;
+    padding-left: 40px;
+    font-size: 20px;
+    background-color: #de8c1f;
 }
 .listNavbar {
     background: rgb(24,24,27);

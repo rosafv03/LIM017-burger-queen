@@ -1,7 +1,7 @@
 *{
   /*   background-color: rgba(0, 0, 0, 0.712); */
     /* box-sizing: border-box; */
-    
+    margin: auto;
 
 }
 .container {
@@ -22,7 +22,7 @@ a{
 }
 .input {
     display: block;
-    width: 90%;
+    width: 70%;
     padding: 0.5rem 0.8rem 0.5rem 0.8rem;
     /* margin: 0.9vw 0; */
     border: 0;
@@ -40,5 +40,6 @@ a{
     min-height: 35px;
     min-width: 100px;
     padding: 10px 25px;
+    cursor: pointer;
    
 }
