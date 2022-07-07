@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { userContext } from '../../FirebaseConfig/authContext';
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../FirebaseConfig/FirestoreDB";
 import Navbar from "../../Components/NavBar/NavBar";
@@ -7,43 +6,49 @@ import swal from "sweetalert";
 import "./kitchen.css";
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
-  // const [orderUpdate, setOrderUpdate]  = useState([]);
+
+  const fetchData = async () => {
+    let array = [];
+    const querySnapshot = await getDocs(collection(db, "order"));
+
+    querySnapshot.forEach((doc) => {
+      const dataOrder = { ...doc.data(), id: doc.id };
+      //console.log(dataOrder);
+      array.push(dataOrder);
+      setOrders(array);
+    });
+    return array;
+  };
+
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+ 
 
   const changeStatus = async (id) => {
     try {
       const idRef = doc(db, "order", id);
-      const changeRef =  await updateDoc(idRef, {
-        status: "Atendido", 
+      const changeRef = await updateDoc(idRef, {
+        status: "Atendido",
       })
-      const attended=
-      swal(
-        "Su pedido ya ha sido atendido",
-        "",
-        "warning"
-      );
-       // eslint-disable-next-line no-unused-expressions
-       idRef.status === "Pendiente" ? changeRef :  attended
-    } catch (error) {
+      const attended =
+        swal(
+          "Pedido esperando para ser entregado",
+          "",
+          "warning"
+        );
+      // eslint-disable-next-line no-unused-expressions
+      idRef.status === "Pendiente" ? changeRef : attended
+      fetchData();
+    }
+
+    catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      let array = [];
-      const querySnapshot = await getDocs(collection(db, "order"));
 
-      querySnapshot.forEach((doc) => {
-        const dataOrder = { ...doc.data(), id: doc.id };
-        console.log(dataOrder);
-        //  dataOrder.pedido=doc.id;
-        array.push(dataOrder);
-        setOrders(array);
-      });
-      return array;
-    };
-    fetchData();
-  }, []);
 
 
   return (
