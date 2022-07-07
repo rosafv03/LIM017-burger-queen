@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-expressions */
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../FirebaseConfig/FirestoreDB";
 import Navbar from "../../Components/NavBar/NavBar";
 import swal from "sweetalert";
 import "./kitchen.css";
+
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
-
+  //const [orderUpdate, setOrderUpdate] = useState([]);
   const fetchData = async () => {
     let array = [];
     const querySnapshot = await getDocs(collection(db, "order"));
@@ -26,29 +28,49 @@ export const Kitchen = () => {
   }, []);
  
 
-  const changeStatus = async (id) => {
+  const changeStatusKitchen = async (id) => {
     try {
       const idRef = doc(db, "order", id);
-      const changeRef = await updateDoc(idRef, {
-        status: "Atendido",
-      })
-      const attended =
-        swal(
-          "Pedido esperando para ser entregado",
-          "",
-          "warning"
-        );
-      // eslint-disable-next-line no-unused-expressions
-      idRef.status === "Pendiente" ? changeRef : attended
+        const changeRef = await updateDoc(idRef, {
+          status: "Atendido",
+        })
+        const attended =
+          swal(
+            "Su pedido ya fue atendido",
+            "",
+            "warning"
+          );
+        idRef.status === "Pendiente" ? changeRef : attended 
       fetchData();
     }
-
     catch (error) {
       console.log(error);
     }
   };
 
 
+  const changeStatusMesero = async (id) => {
+    try {
+      const idRef = doc(db, "order", id);
+        const changeRef = await updateDoc(idRef, {
+          status: "Entregado",
+        })
+        const attended =
+          swal(
+            "Su pedido ha sido entregado",
+            "",
+            "warning"
+          );
+        idRef.status === "Atendido" ? changeRef : attended 
+      fetchData();
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };  
+
+const trabajador=localStorage.getItem('userEmail');
+console.log(trabajador)
 
 
   return (
@@ -87,12 +109,21 @@ export const Kitchen = () => {
                     <section className="order-status">
                       {" "}
                       Estado del pedido:
-                      <button
+                      <div>
+                      { trabajador==='cocina@gmail.com' ? 
+                      <button  onClick={() => changeStatusKitchen(item.id)} > {item.status}</button> 
+                      :
+                      <button disabled={item.status==='Pendiente' }  onClick={() => changeStatusMesero(item.id)} > {item.status}</button> 
+
+                      }
+</div>
+
+
+                      {/* <button
                         onClick={() => changeStatus(item.id)}
-                        className={item.status === 'Pendiente' ? "statusColor1" : "statusColor2"}
-                      >
+                        className={item.status === 'Pendiente' ? "statusColor1" : "statusColor2"}>
                         {item.status}
-                      </button>
+                      </button> */}
                       {console.log(item)}
                     </section>
                   </div>

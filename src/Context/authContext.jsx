@@ -19,7 +19,7 @@ export const userContext =createContext()
     // const user = {
     //     login: true
     // };
-    const registerUser = (email, password) =>  createUserWithEmailAndPassword(auth ,email ,password);
+    const registerUser = (email, password,role ) =>  createUserWithEmailAndPassword(auth ,email ,password,role);
     const loginUser = ( email, password) => signInWithEmailAndPassword(auth, email, password);
     
     return (
