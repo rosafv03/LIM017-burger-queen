@@ -36,7 +36,7 @@ export const Kitchen = () => {
         })
         const attended =
           swal(
-            "Su pedido ya ha sido atendido",
+            "Su pedido ya fue atendido",
             "",
             "warning"
           );
@@ -69,7 +69,7 @@ export const Kitchen = () => {
     }
   };  
 
-const trabajador=localStorage.getItem('userEmail')
+const trabajador=localStorage.getItem('userEmail');
 console.log(trabajador)
 
 
