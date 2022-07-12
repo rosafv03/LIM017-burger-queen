@@ -5,7 +5,8 @@ import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
 import { Login } from "../Login/Login";
 import { AuthProvider } from "../../Context/authContext";
-jest.mock("../../Context/__mocks__/authContext.jsx");
+
+// jest.mock("../../Context/authContext.jsx");
 //testeamos que un componente se ubique en una pagina
 
 test("render ¿No tienes cuenta?", () => {
@@ -14,10 +15,10 @@ test("render ¿No tienes cuenta?", () => {
   // history.push(route)
   render(
     <AuthProvider>
-      <Router location={history.location} navigator={history}>
+        <Router location={history.location} navigator={history}>
         <Login />
       </Router>
-    </AuthProvider>
+    </AuthProvider> 
   );
   const linkElement = screen.getByText(/No tienes cuenta/i);
   expect(linkElement).toBeInTheDocument();
@@ -39,9 +40,7 @@ test("Componente login", async () => {
   expect(password).toBeInTheDocument();
 });
 
-
-
-  test ("usuario autenticado", async () => {
+  test ("ingreso de usuario", async () => {
     const history = createMemoryHistory();
     render(
       <AuthProvider>
@@ -50,16 +49,42 @@ test("Componente login", async () => {
         </Router>
       </AuthProvider>
     );
-    const email = await screen.findByPlaceholderText("ingresar email");
-    const password = await screen.findByPlaceholderText("ingresar contraseña");
-    const buttonLogin = await screen.findByText("Login");
+    const email =  screen.getByTestId("loginemail");
+    const password =   screen.getByTestId("loginPassword");
+    const buttonLogin = await screen.findByTestId("button-login");
 
     fireEvent.change(email, { target: { value: "cocina@gmail.com" } });
    
     fireEvent.change(password, { target: { value: "cocina$123." } });
+
     fireEvent.click(buttonLogin);
 
     await waitFor(() => {
-      expect(history.location.pathname).toBe("/");
+      expect(history.location.pathname).toBe("/home");
     });
   });
+  
+//   // test ("usuario sin registrar", async () => {
+//   //   const history = createMemoryHistory();
+//   //   render(
+//   //     <AuthProvider>
+//   //       <Router location={history.location} navigator={history}>
+//   //         <Login />
+//   //         <Home />
+//   //       </Router>
+//   //     </AuthProvider>
+//   //   );
+//   //   const email =  screen.getByTestId("loginemail");
+//   //   const password =   screen.getByTestId("loginPassword");
+//   //   const buttonLogin = await screen.findByText("Login");
+
+//   //   fireEvent.change(email, { target: { value: "pablo" } });
+   
+//   //   fireEvent.change(password, { target: { value: "2233" } });
+
+//   //   fireEvent.click(buttonLogin);
+
+//   //   await waitFor(() => {
+//   //     expect(history.location.pathname).toBe("/");
+//   //   });
+//   // });

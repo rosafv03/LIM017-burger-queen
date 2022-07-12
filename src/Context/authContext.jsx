@@ -20,7 +20,10 @@ export const userContext =createContext()
     //     login: true
     // };
     const registerUser = (email, password,role ) =>  createUserWithEmailAndPassword(auth ,email ,password,role);
-    const loginUser = ( email, password) => signInWithEmailAndPassword(auth, email, password);
+     const loginUser = (email, password) => {
+         console.log("entrando en la funcion")
+         signInWithEmailAndPassword(auth, email, password);
+    } 
     
     return (
     <userContext.Provider value={{ user, setUser,  registerUser, loginUser}}>

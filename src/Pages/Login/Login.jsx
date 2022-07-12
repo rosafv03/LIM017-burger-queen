@@ -52,7 +52,7 @@ export const Login = () => {
           required
         ></input>
 
-        <label className="form-label">Clave privada:</label>
+        <label className="form-label">Clave privada</label>
         <input
           type="password"
           data-testid="loginPassword"

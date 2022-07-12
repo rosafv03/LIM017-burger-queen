@@ -22,56 +22,40 @@ export const Kitchen = () => {
     return array;
   };
 
-
   useEffect(() => {
     fetchData();
   }, []);
- 
 
   const changeStatusKitchen = async (id) => {
     try {
       const idRef = doc(db, "order", id);
-        const changeRef = await updateDoc(idRef, {
-          status: "Atendido",
-        })
-        const attended =
-          swal(
-            "Su pedido ya fue atendido",
-            "",
-            "warning"
-          );
-        idRef.status === "Pendiente" ? changeRef : attended 
+      const changeRef = await updateDoc(idRef, {
+        status: "Atendido",
+      });
+      const attended = swal("Su pedido ya fue atendido", "", "warning");
+      idRef.status === "Pendiente" ? changeRef : attended;
       fetchData();
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
   };
 
-
   const changeStatusMesero = async (id) => {
     try {
       const idRef = doc(db, "order", id);
-        const changeRef = await updateDoc(idRef, {
-          status: "Entregado",
-        })
-        const attended =
-          swal(
-            "Su pedido ha sido entregado",
-            "",
-            "warning"
-          );
-        idRef.status === "Atendido" ? changeRef : attended 
+      const changeRef = await updateDoc(idRef, {
+        status: "Entregado",
+      });
+      const attended = swal("Su pedido ha sido entregado", "", "success");
+      idRef.status === "Atendido" ? changeRef : attended;
       fetchData();
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
-  };  
+  };
 
-const trabajador=localStorage.getItem('userEmail');
-console.log(trabajador)
-
+  const trabajador = localStorage.getItem("userEmail");
+  console.log(trabajador);
 
   return (
     <>
@@ -110,15 +94,25 @@ console.log(trabajador)
                       {" "}
                       Estado del pedido:
                       <div>
-                      { trabajador==='cocina@gmail.com' ? 
-                      <button  onClick={() => changeStatusKitchen(item.id)} > {item.status}</button> 
-                      :
-                      <button disabled={item.status==='Pendiente' }  onClick={() => changeStatusMesero(item.id)} > {item.status}</button> 
-
-                      }
-</div>
-
-
+                        {trabajador === "cocina@gmail.com" ? (
+                          <button
+                            className="statusColor1"
+                            onClick={() => changeStatusKitchen(item.id)}
+                          >
+                            {" "}
+                            {item.status}
+                          </button>
+                        ) : (
+                          <button
+                            disabled={item.status === "Pendiente"}
+                            className="statusColor2"
+                            onClick={() => changeStatusMesero(item.id)}
+                          >
+                            {" "}
+                            {item.status}
+                          </button>
+                        )}
+                      </div>
                       {/* <button
                         onClick={() => changeStatus(item.id)}
                         className={item.status === 'Pendiente' ? "statusColor1" : "statusColor2"}>
