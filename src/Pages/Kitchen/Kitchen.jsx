@@ -74,8 +74,6 @@ export const Kitchen = () => {
             </td>
             <td className="container-order">
               <div className="targetOrder">
-                {" "}
-                Pedidos<br></br>
                 {/* {console.log(orders)} */}
                 {orders.map((item, i) => (
                   <div className="card-order" key={i}>
@@ -113,11 +111,7 @@ export const Kitchen = () => {
                           </button>
                         )}
                       </div>
-                      {/* <button
-                        onClick={() => changeStatus(item.id)}
-                        className={item.status === 'Pendiente' ? "statusColor1" : "statusColor2"}>
-                        {item.status}
-                      </button> */}
+                    
                       {console.log(item)}
                     </section>
                   </div>

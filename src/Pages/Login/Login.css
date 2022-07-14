@@ -12,9 +12,10 @@
     /* margin-left: 58px; */
     /* margin-right: 50px; */
     width: 45%;
-    background-color: #b52e1d;
+    background-color: #67380A;
     color: beige;
     margin-top: 8%;
+    padding: 5%;
     border-radius: 5%;
 }
 a{
@@ -29,10 +30,10 @@ a{
     border-radius: 5px;
     font-size: 20px;
     margin: auto;
-    background-color: aliceblue;
+    background-color:#D9D9D9;
 }
 .buttonLogin, .buttonRegister{
-    background-color: #f09014;
+    background-color: #88A02E;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: #ffffff;
@@ -40,6 +41,7 @@ a{
     min-height: 35px;
     min-width: 100px;
     padding: 10px 25px;
+    margin: 5%;
     cursor: pointer;
    
 }

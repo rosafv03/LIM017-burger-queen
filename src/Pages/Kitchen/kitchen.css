@@ -19,6 +19,13 @@
   min-width: 15rem;
   padding: 1rem;
 }
+body{
+ 
+  background-attachment: fixed;
+  background-position:left;
+  margin:0;
+  background-size: cover;
+}
 
 .container-order {
 

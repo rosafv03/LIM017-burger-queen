@@ -1,6 +1,6 @@
 body {
-  background-color: #f3d09d;
-  /* background-image: url(../../assets/img/burguer1.jpg); */
+  /* background-color: #f3d09d; */
+  background-image: url(../../assets/img/fndo.png);
   /* background-attachment: fixed;
   background-position: left; */
   /* margin: 0; */
@@ -270,7 +270,7 @@ button {
 
 .menu-items {
   height: 100vh;
-  width: 80%;
+  /* width: 80%; */
   display: flex;
 }
 .menu-order {
@@ -323,7 +323,7 @@ button {
   margin-bottom: 70%;
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .table-container-waiter {
     width: 50%;
     height:auto;
@@ -349,4 +349,4 @@ button {
   .menu-items{
     width:20%;
   }
-}
+} */
