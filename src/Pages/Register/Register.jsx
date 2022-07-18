@@ -48,9 +48,9 @@ export const Register = () => {
 
         <label className="form-label">Contraseña:</label>
         <input type="password" className="input" placeholder="Añade mas de 6 caracteres" id="password" onChange={e => setPassword(e.target.value)} required></input>
-
-        <p>¿Ya tienes cuenta?<a href="/" style={styleNav}> Inicia sesión</a></p>
         <button className='buttonRegister' type="submit" >Regístrate</button>
+        <p>¿Ya tienes cuenta?<a href="/" style={styleNav}> Inicia sesión</a></p>
+       
       </div>
     </form>
   )

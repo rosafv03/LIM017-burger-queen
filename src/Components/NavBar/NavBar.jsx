@@ -4,6 +4,7 @@ import { singOutUser } from '../../Context/authContext';
 import swal from 'sweetalert';
 import { useNavigate, } from 'react-router-dom';
 // import {Kitchen } from '../Kitchen/Kitchen'
+import logoBQ from '../../assets/img/logoBQ.png';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -37,8 +38,14 @@ function Navbar() {
 
   return (
     <nav className="navbarItems">
+<<<<<<< HEAD
       <button type='button' className='logout' onClick={handleKitchen}>Cocina</button>
       <button type='button' className='logout' onClick={handleHome}>Home</button>
+=======
+      <section className="logoBquenn"> <img src={logoBQ} alt ="logobQ" width= "70%"></img></section><h1> BurguerQueen</h1>
+      <button type='button'  className='logout'  onClick={handleKitchen}>Cocina</button>
+      <button type='button'  className='logout' onClick={handleHome}>Home</button>
+>>>>>>> origin/change-rosa
       <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
     </nav>
   )

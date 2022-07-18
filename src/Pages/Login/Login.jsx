@@ -63,7 +63,14 @@ export const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         ></input>
-
+         <button
+          className="buttonLogin"
+          data-testid="button-login"
+          type="submit"
+        >
+         Iniciar sesión
+        </button>
+        
         <p>
           ¿No tienes cuenta?
           <a href="/register" style={styleNav}>
@@ -71,13 +78,7 @@ export const Login = () => {
             Regístrate
           </a>
         </p>
-        <button
-          className="buttonLogin"
-          data-testid="button-login"
-          type="submit"
-        >
-          Login
-        </button>
+       
       </div>
     </form>
   );

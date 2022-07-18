@@ -12,9 +12,10 @@
     /* margin-left: 58px; */
     /* margin-right: 50px; */
     width: 45%;
-    background-color: #b52e1d;
+    background-color: #67380A;
     color: beige;
     margin-top: 8%;
+    padding: 3% 0;
     border-radius: 5%;
 }
 a{
@@ -29,17 +30,24 @@ a{
     border-radius: 5px;
     font-size: 20px;
     margin: auto;
-    background-color: aliceblue;
+    background-color:#D9D9D9;
 }
-.buttonLogin, .buttonRegister{
-    background-color: #f09014;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+input::placeholder {
+    color: rgba(54, 54, 54, 0.527);
+    font-size: 1.2em;
+    font-style: italic;
+  }
+.buttonLogin, .buttonRegister {
+    background-color: #88A02E;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
     color: #ffffff;
-    font: normal 400 16px/16px Open sans;
+    /* font: normal 400 16px/16px Open sans; */
     min-height: 35px;
+    font-size: x-large;
     min-width: 100px;
     padding: 10px 25px;
+    margin: 5%;
     cursor: pointer;
-   
+    border: none;
 }
