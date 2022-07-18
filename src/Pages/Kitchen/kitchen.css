@@ -1,9 +1,11 @@
+
+
 .container-kitchen {
   /* background-color: #f3d09d; */
-  display: block;
-  text-align: center;
   background-image: url(../../assets/img/background-kitchen.png);
-  height:auto;
+  display: block;
+  /* text-align: center; */
+  height: auto;
   border-color: 1px solid white;
   font-size: 20px;
   /* margin: auto; */
@@ -11,11 +13,15 @@
   /* margin-right: 50px; */
   /* background-color: #000000; */
   color: rgb(0, 0, 0);
-
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  
+  /* position: fixed; */
+  background-attachment: fixed;
+  background-repeat: repeat;
+  width: 100%;
+  /* height: 100vh; */
+  /* background-position: top left; */
 }
 .targetOrder {
   display: grid;
@@ -32,8 +38,8 @@
   /* font-size: 15px; */
   justify-content: space-around;
   margin: 0.5rem;
-  max-width: 15rem;
-  min-width: 15rem;
+  max-width: 300px;
+  min-width: 200px;
   /* padding: 1rem; */
 }
 body{
@@ -107,4 +113,19 @@ body{
 
 .card-order ul {
   padding: 5px;
+}
+.total{
+  margin-bottom: 0px;
+}
+.kitchen-list {
+  display: flex;
+  border-bottom: 1px solid #d9a55f;
+  /* font-family: monospace; */
+  /* font-size: revert; */
+  font: inherit;
+  font-style: unset;
+  font-feature-settings: "smcp";
+  font-variant: small-caps;
+  font-weight: 600;
+  margin: 8px;
 }

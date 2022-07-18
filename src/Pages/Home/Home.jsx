@@ -155,7 +155,7 @@ export const Home = () => {
             <div className="waiter-order">
               <ul>
                 {(cart || {}).map((item, index) => (
-                  <li key={index}>
+                  <li className="order-list" key={index}>
                     <span className="lis-order">
                       {item.items} {item.price}$
                     </span>

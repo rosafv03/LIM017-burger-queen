@@ -79,11 +79,11 @@ export const Kitchen = () => {
                 </div>
                 {item.pedido?.map((pedido, i) => (
                   <ul key={i}>
-                    <li> {pedido.items}</li>
+                    <li className="kitchen-list"> {pedido.items}</li>
                   </ul>
                 ))}
               
-                <section>Total : {item.total}${/* {console.log(item)} */}
+                <section className="total">Total : {item.total}${/* {console.log(item)} */}
                 </section>
                 <div className="statusButton">
                     {trabajador === "cocina@gmail.com" ? (
