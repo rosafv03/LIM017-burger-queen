@@ -12,7 +12,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-
+.divMenu {
+  display: grid;
+  grid-template-columns: 50% 48%;
+}
+/* 
 button {
   background-color: #e96224;
   border-radius: 4px;
@@ -28,7 +32,7 @@ button {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-}
+} */
 
 .imgBanner {
   width: 100%;
@@ -57,18 +61,16 @@ ul {
 }
 
 .sendOrder {
-  background-color: #13b952;
+  background-color: #88A02E;
   border-radius: 4px;
   border: none;
   box-shadow: 0 0 10px rgb(0 0 0 / 10%);
-  color: #ffffff;
+  /* color: #ffffff; */
   font: normal 400 16px/16px Open sans;
   min-height: 35px;
   min-width: 80px;
   max-width: 200px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   display: inline-grid;
   padding: 10px 25px;
@@ -122,8 +124,8 @@ h1 {
 }
 
 .container-tabs {
-  display: flex;
-  flex-direction: column;
+  /* /* display: flex; */
+  flex-direction: column; 
   /* position: relative; */
   /* width: 60%; */
   /* margin-left: 20%; */
@@ -133,10 +135,10 @@ h1 {
   /* word-break: break-all; */
   /* border: 1px solid rgba(255, 250, 250, 0.774); */
 }
-
 .items-btn {
   width: 210px;
-  background-color: #f03849;
+  background-color: #88a02e;
+
   color: white;
   font-size: 100%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -164,27 +166,26 @@ h1 {
   text-align: center;
   font-size: larger;
   /* width: 60%; */
-  /* background-color: #f3d09d; */
+  background-color: #f3d09d;
   cursor: pointer;
   /* box-sizing: content-box; */
   position: relative;
   /* outline: none; */
-  background-color: #f03849;
+  /* background-color: #f03849; */
 }
-
 .tabs:not(:last-child) {
   border-right: 1px solid rgba(0, 0, 0, 0.274);
 }
 
 .active-tabs {
-  background: #13b952;
+  background: #88A02E;
   border-bottom: 1px solid transparent;
 }
 
-button {
+/* button {
   border: none;
   box-shadow: 2px 2px 5px #999;
-}
+} */
 
 .content-tabs {
   flex-grow: 1;
@@ -221,21 +222,20 @@ button {
 .title-pages {
   margin-top: 0;
 }
-
 .conteinerOrder {
   /* border-top: 1px solid rgb(252, 237, 237); */
   /* min-height: 50%; */
   /* display: flex; */
-  flex-direction: row;
+  /* flex-direction: row; */
   position: relative;
   font-size: 24px;
-  /* height: auto; */
+  height: auto;
   /* margin: 100px auto 0; */
   /* word-break: break-all; */
-  width: 40%;
+  /* width: 40%; */
   /* height: 100vh; */
-  color: black;
-  background: #f6bc33;
+  /* color: black; */
+  /* background: #f6bc33; */
   /* margin-top: 10%; */
   /* margin-bottom: 15%; */
   /* border-radius: 8%; */
@@ -261,11 +261,14 @@ button {
   display: flex;
   justify-content: end;
 }
-
 .colum1 {
-  background-image: url(../../assets//img/bann-1.png);
-  width: 15%;
-  height: 100vh;
+ 
+  height: 10%;
+  background: #67380A;
+  width: 100%;
+  /* display: block; */
+  display: flex;
+  justify-content: end;
 }
 
 .menu-items {
@@ -314,14 +317,12 @@ button {
 .take-order {
   /* width: 80%; */
   /* height: 100vh; */
-  min-height: 80vh;
+  min-height: 65vh;
   /* margin-bottom: 15%; */
   /* border-radius: 8%; */
   /* margin: 10%; */
 }
-.section-total {
-  margin-bottom: 70%;
-}
+
 
 /* @media screen and (max-width: 480px) {
   .table-container-waiter {

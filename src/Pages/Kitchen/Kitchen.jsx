@@ -59,68 +59,55 @@ export const Kitchen = () => {
 
   return (
     <>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="colum1">
-              {" "}
-              <Navbar />
-            </td>
-            <td className="container-order">
-              <div className="targetOrder">
-                {/* {console.log(orders)} */}
-                {orders.map((item, i) => (
-                  <div className="card-order" key={i}>
-                    <button className="order-information">
-                      Mesa: {item.mesa} <br></br>
-                      Cliente: {item.customer}
-                      <br></br>
-                      Total : {item.total}${/* {console.log(item)} */}
-                    </button>
-                    {item.pedido?.map((pedido, i) => (
-                      <ul key={i}>
-                        <li> {pedido.items}</li>
-                      </ul>
-                    ))}
-                    <section className="order-status">
-                      {" "}
-                      Estado del pedido:
-                      <div>
-                        {trabajador === "cocina@gmail.com" ? (
-                          <button
-                            className="statusColor1"
-                            onClick={() => changeStatusKitchen(item.id)}
-                          >
-                            {" "}
-                            {item.status}
-                          </button>
-                        ) : (
-                          <button
-                            disabled={item.status === "Pendiente"}
-                            className="statusColor2"
-                            onClick={() => changeStatusMesero(item.id)}
-                          >
-                            {" "}
-                            {item.status}
-                          </button>
-                        )}
-                      </div>
-                    
-                      {console.log(item)}
-                    </section>
-                  </div>
+      <div className="container-kitchen">
+        <section className="colum1">
+          {" "}
+          <Navbar />
+        </section>
+        <div className="container-order">
+          <section className="targetOrder">
+            {/* {console.log(orders)} */}
+            {orders.map((item, i) => (
+              <div className="card-order" key={i}>
+                <button className="order-information">
+                  Mesa: {item.mesa} <br></br>
+                  Cliente: {item.customer}
+                  <br></br>
+                  Total : {item.total}${/* {console.log(item)} */}
+                </button>
+                {item.pedido?.map((pedido, i) => (
+                  <ul key={i}>
+                    <li> {pedido.items}</li>
+                  </ul>
                 ))}
+              
+                  <div>
+                    {trabajador === "cocina@gmail.com" ? (
+                      <button
+                        className="statusColor1"
+                        onClick={() => changeStatusKitchen(item.id)}
+                      >
+                        {" "}
+                        {item.status}
+                      </button>
+                    ) : (
+                      <button
+                        disabled={item.status === "Pendiente"}
+                        className="statusColor2"
+                        onClick={() => changeStatusMesero(item.id)}
+                      >
+                        {" "}
+                        {item.status}
+                      </button>
+                    )}
+                  </div>
+                  {console.log(item)}
+      
               </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            ))}
+          </section>
+        </div>
+      </div>
     </>
   );
 };
