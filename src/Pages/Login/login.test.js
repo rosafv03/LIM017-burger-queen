@@ -63,28 +63,3 @@ test("Componente login", async () => {
       expect(history.location.pathname).toBe("/home");
     });
   });
-  
-//   // test ("usuario sin registrar", async () => {
-//   //   const history = createMemoryHistory();
-//   //   render(
-//   //     <AuthProvider>
-//   //       <Router location={history.location} navigator={history}>
-//   //         <Login />
-//   //         <Home />
-//   //       </Router>
-//   //     </AuthProvider>
-//   //   );
-//   //   const email =  screen.getByTestId("loginemail");
-//   //   const password =   screen.getByTestId("loginPassword");
-//   //   const buttonLogin = await screen.findByText("Login");
-
-//   //   fireEvent.change(email, { target: { value: "pablo" } });
-   
-//   //   fireEvent.change(password, { target: { value: "2233" } });
-
-//   //   fireEvent.click(buttonLogin);
-
-//   //   await waitFor(() => {
-//   //     expect(history.location.pathname).toBe("/");
-//   //   });
-//   // });
