@@ -22,9 +22,7 @@ export const Kitchen = () => {
     return array;
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+
 
   const changeStatusKitchen = async (id) => {
     try {
@@ -54,6 +52,10 @@ export const Kitchen = () => {
     }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
   const trabajador = localStorage.getItem("userEmail");
   console.log(trabajador);
 

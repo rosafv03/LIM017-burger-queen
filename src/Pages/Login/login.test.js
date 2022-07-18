@@ -6,7 +6,7 @@ import { Router } from "react-router-dom";
 import { Login } from "../Login/Login";
 import { AuthProvider } from "../../Context/authContext";
 
-// jest.mock("../../Context/authContext.jsx");
+jest.mock("../../Context/authContext.jsx");
 //testeamos que un componente se ubique en una pagina
 
 test("render ¿No tienes cuenta?", () => {
@@ -16,7 +16,7 @@ test("render ¿No tienes cuenta?", () => {
   render(
     <AuthProvider>
         <Router location={history.location} navigator={history}>
-        <Login />
+        <Login/>
       </Router>
     </AuthProvider> 
   );

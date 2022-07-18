@@ -2,44 +2,45 @@ import React from 'react'
 import './navbar.css';
 import { singOutUser } from '../../Context/authContext';
 import swal from 'sweetalert';
-import { useNavigate,  } from 'react-router-dom';
+import { useNavigate, } from 'react-router-dom';
 // import {Kitchen } from '../Kitchen/Kitchen'
 
 function Navbar() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleKitchen =()=>{
-      navigate('/kitchen')
+  const handleKitchen = () => {
+    navigate('/kitchen')
   }
-  const handleHome =()=>{
+  const handleHome = () => {
     navigate('/home')
   }
 
-    const handleSinOff = (e) => { 
-        e.preventDefault();
-        singOutUser()
-        swal({
-        title: "Estás seguro de cerrar sesión",
-        text: "Si cierras sesión no podrás seguir tomando pedidos",
-        icon: "warning",
-        buttons: ["No", "Sí"]
-      })
+  const handleSinOff = (e) => {
+    e.preventDefault();
+    singOutUser()
+    swal({
+      title: "Estás seguro de cerrar sesión",
+      text: "Si cierras sesión no podrás seguir tomando pedidos",
+      icon: "warning",
+      buttons: ["No", "Sí"]
+    })
       .then((logout) => {
         if (logout) {
-          swal({text:"Cerrando sesión con éxito", 
+          swal({
+            text: "Cerrando sesión con éxito",
             icon: "success",
           });
           navigate('/')
         }
       });
-      }
-      
+  }
+
   return (
     <nav className="navbarItems">
-      <button type='button'  className='logout'  onClick={handleKitchen}>Cocina</button>
-      <button type='button'  className='logout' onClick={handleHome}>Home</button>
+      <button type='button' className='logout' onClick={handleKitchen}>Cocina</button>
+      <button type='button' className='logout' onClick={handleHome}>Home</button>
       <button type='button' onClick={handleSinOff} className='logout'>Cerrar Cesión</button>
-</nav>
+    </nav>
   )
 }
 

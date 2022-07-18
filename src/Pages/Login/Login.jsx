@@ -25,6 +25,7 @@ export const Login = () => {
         loginemail + " Ya puede realizar tu pedido",
         "success"
       );
+
       // alert('Bienvenido ' + email + 'ya puedes hacer el pedido');
       //   console.log('usuario', email, 'logueado');
     } catch (error) {
