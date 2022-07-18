@@ -99,8 +99,9 @@ ul li {
 
 h1 {
   color: #ffffff;
+  margin-left: 0px;
+  padding: 0px;
 }
-
 .container {
   width: 80%;
 }

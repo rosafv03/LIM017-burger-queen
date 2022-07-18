@@ -1,23 +1,25 @@
-.container-kitchen{
-  background-color: #f3d09d;
-
-  /* display: block; */
+.container-kitchen {
+  /* background-color: #f3d09d; */
+  display: block;
   text-align: center;
+  background-image: url(../../assets/img/background-kitchen.png);
+  height:auto;
   border-color: 1px solid white;
-
   font-size: 20px;
   /* margin: auto; */
   /* margin-left: 58px; */
   /* margin-right: 50px; */
-
   /* background-color: #000000; */
   color: rgb(0, 0, 0);
 
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 .targetOrder {
-  width: 30%;
-
-
+  display: grid;
+  grid-template-columns: 40% 40% 40%;
 }
 
 .card-order {
@@ -43,15 +45,31 @@ body{
 }
 
 .container-order {
-
+/* 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  overflow: scroll;
+  overflow: scroll; */
 
 }
+.statusButton {
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  border: none;
+  margin-bottom: 0;
+}
 
+.tableClient {
+  background-color: #493235;
+  width: 30%;
+  padding: 7px;
+  margin: 0px;
+  border: none;
+  color: white;
+  font-size: x-large;
+  justify-content: space-around;
+}
 .order-status {
   padding: 5px;
   display: grid;
@@ -60,28 +78,31 @@ body{
 
 .order-information {
   width: 100%;
+  margin: 0;
+  background-color: #d9a55f;
+  display: flex;
 }
 
 .statusColor1,
 .statusColor2 {
   display: flex;
   justify-content: center;
-  margin: 15px 0px 5px 0px;
+  /* margin: 15px 0px 5px 0px; */
   font-size: 25px;
   cursor: pointer;
 }
 
 .statusColor1 {
-  color: white;
-  background-color: orangered;
+   color: white;
+   background-color: orangered; 
 }
 
 .statusColor2 {
-  color: green;
-  background-color: #ecebe5;
-  font-size: 20px;
-  border: none;
-
+  width: 100%;
+  background-color: #88A02E;
+  border-radius: 0 0 10px 10px;
+  /* margin: 0px; */
+  margin-bottom: 0px;
 }
 
 .card-order ul {
