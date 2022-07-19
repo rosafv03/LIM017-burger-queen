@@ -22,18 +22,17 @@ export const Additional = () => {
       }
   return (
 
-    <><div>
-
+    <>
       <>
         {itemsAdditional.map((item, i) => (
           <button className="items-btn" key={i} onClick={() => addItemsToCarts(item)}>
-             {item.items} {" "}{item.price} $
              <img className='img-product' src={item.url} alt='item' width='100px' />
+             {item.items} {" "}{item.price} $
+            
           </button>
         ))}
       </>
 
-    </div>
     </>
   )
 }

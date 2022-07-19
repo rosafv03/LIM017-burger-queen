@@ -32,17 +32,18 @@ export const Lunch = () => {
   }
 
   return (
-   <><div>
+   <>
       <>
         {itemsLunch.map((item, i) => (
-          <div key={i}>
+          <div className="items"  key={i}>
             <button className="items-btn" onClick={() => addItemsToCarts(item)}>
-            {item.items} {" "}{item.price} $ 
             <img className='img-product' src={item.url} alt='item' width='100px' />
+            {item.items} {" "}{item.price} $ 
+           
             </button>
           </div>
         ))}
       </>
-    </div></>    
+   </>    
   )
 }

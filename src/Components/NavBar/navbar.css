@@ -1,5 +1,5 @@
 .logout {
-    height: 100%;
+    /* height: 100%; */
     width: 15%;
     margin: 1px;
     border: none;
@@ -23,8 +23,8 @@ li.ex2:hover, li.ex2:active {font-size: 150%;}
     display: contents;
    
 }
-.logoBquenn{
+.logoBquenn {
     margin-left: 0px;
-    
+    margin-right: 0px;
 }
 
