@@ -1,23 +1,31 @@
-.container-kitchen{
-  background-color: #f3d09d;
 
-  /* display: block; */
-  text-align: center;
+
+.container-kitchen {
+  /* background-color: #f3d09d; */
+  background-image: url(../../assets/img/background-kitchen.png);
+  display: block;
+  /* text-align: center; */
+  height: auto;
   border-color: 1px solid white;
-
   font-size: 20px;
   /* margin: auto; */
   /* margin-left: 58px; */
   /* margin-right: 50px; */
-
   /* background-color: #000000; */
   color: rgb(0, 0, 0);
-
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* position: fixed; */
+  background-attachment: fixed;
+  background-repeat: repeat;
+  width: 100%;
+  /* height: 100vh; */
+  /* background-position: top left; */
 }
 .targetOrder {
-  width: 30%;
-
-
+  display: grid;
+  grid-template-columns: 40% 40% 40%;
 }
 
 .card-order {
@@ -30,8 +38,8 @@
   /* font-size: 15px; */
   justify-content: space-around;
   margin: 0.5rem;
-  max-width: 15rem;
-  min-width: 15rem;
+  max-width: 300px;
+  min-width: 200px;
   /* padding: 1rem; */
 }
 body{
@@ -43,15 +51,31 @@ body{
 }
 
 .container-order {
-
+/* 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  overflow: scroll;
+  overflow: scroll; */
 
 }
+.statusButton {
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  border: none;
+  margin-bottom: 0;
+}
 
+.tableClient {
+  background-color: #493235;
+  width: 30%;
+  padding: 7px;
+  margin: 0px;
+  border: none;
+  color: white;
+  font-size: x-large;
+  justify-content: space-around;
+}
 .order-status {
   padding: 5px;
   display: grid;
@@ -60,30 +84,48 @@ body{
 
 .order-information {
   width: 100%;
+  margin: 0;
+  background-color: #d9a55f;
+  display: flex;
 }
 
 .statusColor1,
 .statusColor2 {
   display: flex;
   justify-content: center;
-  margin: 15px 0px 5px 0px;
+  /* margin: 15px 0px 5px 0px; */
   font-size: 25px;
   cursor: pointer;
 }
 
 .statusColor1 {
-  color: white;
-  background-color: orangered;
+   color: white;
+   background-color: orangered; 
 }
 
 .statusColor2 {
-  color: green;
-  background-color: #ecebe5;
-  font-size: 20px;
-  border: none;
-
+  width: 100%;
+  background-color: #88A02E;
+  border-radius: 0 0 10px 10px;
+  /* margin: 0px; */
+  margin-bottom: 0px;
 }
 
 .card-order ul {
   padding: 5px;
+}
+.total{
+  margin-bottom: 0px;
+}
+.kitchen-list {
+  display: flex;
+  border-bottom: 1px solid #d9a55f;
+  /* font-family: monospace; */
+  /* font-size: revert; */
+  font: inherit;
+  font-style: unset;
+  font-feature-settings: "smcp";
+  font-variant: small-caps;
+  font-weight: 600;
+  margin: 8px;
 }

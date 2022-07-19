@@ -25,20 +25,22 @@ export const Breakfast = () => {
     addOrder(item)
   }
   return (
-    <><div>
+    <>
 
       <>
         {itemsbreakfast.map((item, i) => (
-          <div key={i}>
-          <button className="items-btn" onClick={() => addItemsToCarts(item)}>
-            {item.items} {" "}{item.price} $
+          <div className="items" key={i}>
+            <button className="items-btn" onClick={() => addItemsToCarts(item)}>
             <img className='img-product' src={item.url} alt='item' width='100px' />
+            
+            {item.items} {" "}{item.price} $
+            
           </button>
           </div>
         ))}
       </>
 
-    </div>
+   
     </>
   )
 }

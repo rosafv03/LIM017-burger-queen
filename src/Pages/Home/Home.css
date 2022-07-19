@@ -11,10 +11,14 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
+  list-style-type: none;
 }
 .divMenu {
   display: grid;
   grid-template-columns: 50% 48%;
+}
+.lis-order{
+  margin-left: 0px;
 }
 /* 
 button {
@@ -39,11 +43,11 @@ button {
 }
 
 ul {
-  background: #232f3b09;
+  /* background: #232f3b09; */
   padding: 20px;
   margin: 0;
+  margin: 4px;
 }
-
 .delete-items {
   /* background-image: url(../../assets/img/cancelar.png); */
   /* background-color: rgba(243, 46, 46, 0.774); */
@@ -52,46 +56,40 @@ ul {
   /* width: 20%; */
   /* height: 20%; */
   font-size: x-large;
-  display: inline-flex;
+  /* display: inline-flex; */
   background: none;
+  border: none;
+  margin-right: 0px;
   box-shadow: none;
-}
-.price-total {
-  border-color: 1px solid white;
 }
 
 .sendOrder {
   background-color: #88A02E;
   border-radius: 4px;
+  font-size: inherit;
   border: none;
   box-shadow: 0 0 10px rgb(0 0 0 / 10%);
-  /* color: #ffffff; */
+  color: #ffffff;
   font: normal 400 16px/16px Open sans;
   min-height: 35px;
   min-width: 80px;
   max-width: 200px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  display: inline-grid;
-  padding: 10px 25px;
+  /* -webkit-font-smoothing: antialiased; */
+  /* display: inline-grid; */
+
+  padding: 20px;
   margin: auto;
   margin-top: 15px;
   cursor: pointer;
+  font-size: unset;
 }
 
 .containerItems {
   display: inline;
 }
 
-ul li {
-  /* background: #000000; */
-  /* color: rgb(255, 255, 255); */
-  margin: 5px;
-  text-align: initial;
-  display: inherit;
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .imglogo {
   width: 80%;
@@ -99,36 +97,45 @@ ul li {
 
 h1 {
   color: #ffffff;
+  margin-left: 0px;
+  padding: 0px;
 }
-
 .container {
   width: 80%;
 }
 
 .container-home {
   background-color: #f3d09d;
-
   /* display: block; */
   text-align: center;
   border-color: 1px solid white;
-
   font-size: 20px;
   /* margin: auto; */
   /* margin-left: 58px; */
   /* margin-right: 50px; */
-
   /* background-color: #000000; */
   color: beige;
   /* margin-top: 15%; */
   /* border-radius: 5%; */
+  /* width: 100%; */
+  /* height: 100vh; */
+  position: fixed;
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
 }
+.waiter-order{
+  width: 80%;
+  list-style-type: none;}
 
 .container-tabs {
-  /* /* display: flex; */
-  flex-direction: column; 
+  flex-direction: column;
   /* position: relative; */
   /* width: 60%; */
+  width: 100%;
   /* margin-left: 20%; */
+  margin-top: 5px;
   /* height: auto; */
   /* background-color: #f3d09d; */
   /* margin: 100px auto 0; */
@@ -136,45 +143,61 @@ h1 {
   /* border: 1px solid rgba(255, 250, 250, 0.774); */
 }
 .items-btn {
-  width: 210px;
-  background-color: #88a02e;
-
-  color: white;
+  width: 200px;
+  height: 260px;
+  background-color: #cfa468;
+  color: rgb(0, 0, 0);
   font-size: 100%;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  padding: 10px;
-  height: 20%;
+
+  /* height: 20%; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 25px;
+  /* border: none; */
   cursor: pointer;
+  margin: 5px;
+  padding: 0px;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  font: inherit;
+  font-style: italic;
+  font-weight: 700;
 }
-
-.img-product{
-  margin-top:10px;
-  width: 180px;
+.items {
+  /* width: 20%; */
+  padding: 0px;
+  margin: 5px;
 }
-
+.img-product {
+  /* margin-top: 0px; */
+  width: 97%;
+  /* margin: 5px 5px 5px 5px; */
+  margin: 0;
+  margin-top: 2px;
+  /* margin-right: 0px; */
+}
 .bloc-tabs {
   display: flex;
+  /* border: 1px black; */
+  border: 1px solid #d9a55f;
 }
 
 .tabs {
   padding: 20px;
+  width: 70%;
   text-align: center;
   font-size: larger;
   /* width: 60%; */
-  background-color: #f3d09d;
+  background-color: #F3D09D;
   cursor: pointer;
   /* box-sizing: content-box; */
   position: relative;
   /* outline: none; */
-  /* background-color: #f03849; */
+  /* background-color: #F03849; */
+  border: none;
 }
 .tabs:not(:last-child) {
-  border-right: 1px solid rgba(0, 0, 0, 0.274);
+ border: none;
 }
 
 .active-tabs {
@@ -216,9 +239,14 @@ h1 {
 }
 
 .active-content {
-  display: block;
-}
+  display: wrap;
+  display: flex;
 
+  flex-wrap: wrap;
+  /* margin: 10px; */
+  /* margin-left: 10%; */
+  /* margin-top: 5%; */
+} 
 .title-pages {
   margin-top: 0;
 }
@@ -227,23 +255,18 @@ h1 {
   /* min-height: 50%; */
   /* display: flex; */
   /* flex-direction: row; */
-  position: relative;
+  /* position: relative; */
   font-size: 24px;
-  height: auto;
-  /* margin: 100px auto 0; */
-  /* word-break: break-all; */
-  /* width: 40%; */
-  /* height: 100vh; */
-  /* color: black; */
-  /* background: #f6bc33; */
-  /* margin-top: 10%; */
-  /* margin-bottom: 15%; */
-  /* border-radius: 8%; */
-  /* margin: 10%; */
-  /* flex-wrap: nowrap; */
-  /* align-content: center; */
-  /* align-items: baseline; */
+  color: black;
+  height: 100%;
+ 
+  margin: 20px;
+  border: 1px solid #f8bb86;
+  align-items: baseline;
+  border-radius: 10px;
+  height: 850px;
 }
+
 .nameClient {
   width: 60%;
 }
@@ -288,14 +311,13 @@ h1 {
   margin: 0px;
 }
 
-.nameClient,
-.table-number {
+.nameClient, .table-number {
   /* display: block; */
   font-family: Quicksand;
   /* font-style: normal; */
   line-height: 40px;
   text-align: center;
-  background: #fff;
+  background: #E8E1C7;
   border: 1px solid #9d91b9;
   border-radius: 10px;
   box-sizing: border-box;
@@ -303,7 +325,8 @@ h1 {
   font-weight: 400;
   /* margin: 20px auto auto; */
   margin-top: 5%;
-  width: 90%;
+  /* width: 90%; */
+  font-size: larger;
 }
 .table-number {
   width: 24%;
@@ -322,7 +345,18 @@ h1 {
   /* border-radius: 8%; */
   /* margin: 10%; */
 }
+.order-list {
+  display: flex;
+  margin: 20px;
 
+  border-bottom: 1px solid #d9a55f;
+  /* font-family: monospace; */
+  /* font-size: revert; */
+  font: inherit;
+  font-style: unset;
+  font-variant: small-caps;
+  font-weight: 600;
+}
 
 /* @media screen and (max-width: 480px) {
   .table-container-waiter {

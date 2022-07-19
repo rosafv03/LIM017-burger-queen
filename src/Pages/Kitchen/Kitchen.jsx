@@ -71,19 +71,23 @@ export const Kitchen = () => {
             {/* {console.log(orders)} */}
             {orders.map((item, i) => (
               <div className="card-order" key={i}>
-                <button className="order-information">
-                  Mesa: {item.mesa} <br></br>
-                  Cliente: {item.customer}
-                  <br></br>
-                  Total : {item.total}${/* {console.log(item)} */}
-                </button>
+                <div className="order-information">
+                  
+                  <section>Cliente:<br></br> {item.customer} </section>
+                  
+                
+                 <section className="tableClient">   🪑 {item.mesa} <br></br> </section>
+               
+                </div>
                 {item.pedido?.map((pedido, i) => (
                   <ul key={i}>
-                    <li> {pedido.items}</li>
+                    <li className="kitchen-list"> {pedido.items}</li>
                   </ul>
                 ))}
               
-                  <div>
+                <section className="total">Total : {item.total}${/* {console.log(item)} */}
+                </section>
+                <div className="statusButton">
                     {trabajador === "cocina@gmail.com" ? (
                       <button
                         className="statusColor1"
