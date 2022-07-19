@@ -78,7 +78,6 @@ export const Login = () => {
             Regístrate
           </a>
         </p>
-       
       </div>
     </form>
   );
