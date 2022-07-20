@@ -138,7 +138,7 @@ export const Home = () => {
                 onChange={handleNumberTable}
               />
               <br></br>
-              <span>Pedido:</span>
+              <span className="title-pages">Pedido:</span>
               <div className="waiter-order">
                 <ul>
                   {(cart || {}).map((item, index) => (
@@ -157,8 +157,8 @@ export const Home = () => {
                 </ul>
               </div>
             </div>
-            <section className="section-total">
-              <span className="price-total">TOTAL={total}$</span>
+            <section className="title-pages">
+              <span className="price-total">Total={total}$</span>
               <br></br>
             </section>
             <button className="sendOrder" onClick={handleSendOrder}>

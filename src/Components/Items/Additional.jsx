@@ -26,7 +26,7 @@ export const Additional = () => {
         {itemsAdditional.map((item, i) => (
           <button className="items-btn" key={i} onClick={() => addItemsToCarts(item)}>
              <img className='img-product' src={item.url} alt='item' width='100px' />
-             {item.items} {" "}{item.price} $
+             <span className="items-name"> {item.items} {" "}{item.price} $</span>
             
           </button>
         ))}

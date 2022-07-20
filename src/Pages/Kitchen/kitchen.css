@@ -16,11 +16,12 @@
 }
 .targetOrder {
   display: grid;
-  grid-template-columns: 40% 40% 40%;
+  grid-template-columns: 33% 33% 33%;
+  margin-left: 4%;
 }
 
 .card-order {
-  background-color: #f3d09d;
+  background-color: #e7e0c6;
   border: 3px solid #493235;
   border-radius: 0 0 10px 10px;
   display: flex;
@@ -29,7 +30,10 @@
   margin: 0.5rem;
   max-width: 300px;
   min-width: 200px;
-
+} 
+.container-order{
+  width: 100%;
+  height: 100%;
 }
 body{
  
@@ -47,7 +51,7 @@ body{
 }
 
 .tableClient {
-  background-color: #493235;
+  background-color: #67380a;
   width: 30%;
   padding: 7px;
   margin: 0px;
@@ -78,8 +82,11 @@ body{
 }
 
 .statusColor1 {
-   color: white;
-   background-color: orangered; 
+  width: 100%;
+  background-color: #a05c2e;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 0px;
+  font-weight: bold;
 }
 
 .statusColor2 {
@@ -87,8 +94,30 @@ body{
   background-color: #88A02E;
   border-radius: 0 0 10px 10px;
   margin-bottom: 0px;
+  font-weight: bold;
 }
-
+.statusColor3 {
+  width: 100%;
+  background-color: #e6dfc5;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border: none;
+  font-size: 100%;
+  color: black;
+  font-weight: bold;
+}
+.statusColorEarring {
+  width: 100%;
+  background-color: #E25526;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 0px;
+  font-size: 25px;
+  color: white;
+  height: 50px;
+  border: none;
+  /* font-weight: bold; */
+}
 .card-order ul {
   padding: 5px;
 }

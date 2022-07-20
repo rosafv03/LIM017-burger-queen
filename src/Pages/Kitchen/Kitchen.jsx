@@ -85,18 +85,26 @@ export const Kitchen = () => {
 
                 <section className="total">Total : {item.total}$</section>
                 <div className="statusButton">
-                  {employee === "cocina@gmail.com" ? (
+               
+                 
+                  {employee === "cocina@gmail.com"  ? (
                     <button
-                      className="statusColor1"
+                    disabled={item.status === "Atendido" || item.status === "Entregado"  }
+                      className={item.status === "Pendiente" ? "statusColorEarring" : "statusColor3"}
                       onClick={() => changeStatusKitchen(item.id)}
                     >
                       {" "}
                       {item.status}
                     </button>
                   ) : (
-                    <button
+                      <button
                       disabled={item.status === "Pendiente"}
-                      className="statusColor2"
+
+                        className={item.status === "Pendiente" ? "statusColor3" : "statusColor2"
+                          ?
+                          item.status === "Atendido" ? "statusColor2" : "statusColor1"
+                          : "statusColor3"}
+                     
                       onClick={() => changeStatusMesero(item.id)}
                     >
                       {" "}
