@@ -21,9 +21,7 @@ export const Kitchen = () => {
     return array;
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+
 
   const changeStatusKitchen = async (id) => {
     try {
@@ -49,7 +47,14 @@ export const Kitchen = () => {
     } catch (error) {}
   };
 
-  const employee = localStorage.getItem("userEmail");
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
+   const employee = localStorage.getItem("userEmail");
+ 
+
 
   return (
     <>

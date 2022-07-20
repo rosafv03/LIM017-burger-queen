@@ -5,10 +5,12 @@ import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import logoBQ from "../../assets/img/logoBQ.png";
 
+
 function Navbar() {
   const navigate = useNavigate();
 
   const handleKitchen = () => {
+
     navigate("/kitchen");
   };
   const handleHome = () => {
