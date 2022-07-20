@@ -1,15 +1,7 @@
 
 import React, { useEffect ,useState, useContext} from 'react'
 import { itemSortLuch } from '../../FirebaseConfig/FirestoreDB';
-// import { useFirestore } from '../hooks/FirestoreConfig.js';
 import {cartContext} from '../../Context/CartContext'
-
-/* import { getStorage, ref, getDownloadURL } from "firebase/storage";
-
-// Create a reference to the file we want to download
-const storage = getStorage();
-const starsRef = ref(storage, 'burguer-simple.png');
- */
 
 
 export const Lunch = () => {
@@ -21,7 +13,7 @@ export const Lunch = () => {
   useEffect(() => {
     const fetchData = async () => {
       const itemsDB = await itemSortLuch();
-      // console.log('trayendo items', itemsDB)
+
       setItemsLunch(itemsDB)
     }
     fetchData();

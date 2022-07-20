@@ -1,9 +1,5 @@
-/* eslint-disable no-useless-concat */
-// import { registerWithEmail } from "../FirebaseConfig/firebaseAuth.js"
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-// import { useAuth } from "../context/authContext.js";
-// import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import { userContext} from "../../Context/authContext"
 import logoB from '../../assets/img/Burguer_Queen.png';
@@ -13,7 +9,6 @@ export const Register = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  // const {singup} = useAuth()
   const { registerUser } = useContext(userContext)
 
   const handleSubmit = async (e) => {
@@ -21,7 +16,6 @@ export const Register = () => {
     try {
       await registerUser(email, password)
       swal(email + " Registrado", " correctamente, ya puedes iniciar sesión", "success")
-      // alert('Usuario ' + email + '   registrado correctamente');
       navigate('/')
       console.log(registerUser)
       console.log('usuario', email, 'registrado', password);

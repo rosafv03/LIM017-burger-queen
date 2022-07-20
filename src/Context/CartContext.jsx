@@ -5,10 +5,12 @@ export const cartContext = createContext();
 export function CartContextProvider(props) {
   //estado del carrito
   const [cart, setCart] = useState([]);
+  //Nombre del cliente
   const [customer, setCustomer] = useState("");
+  //Número de mesa
   const [table, setTable] = useState("");
+  //Orden
   const [orden, setOrden] = useState([]);
-  /*   const { orden, setOrden } = useContext(UserContent); */
 
   const addOrder = (newOrder) => {
     setCart([...cart, { ...newOrder, quantity: 1 }]);

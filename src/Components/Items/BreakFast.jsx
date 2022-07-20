@@ -13,13 +13,11 @@ export const Breakfast = () => {
   useEffect(() => {
     const fetchData = async () => {
       const itemsDB = await itemSortbreakfast();
-       console.log('trayendo items', itemsDB)
       setItems(itemsDB)
     }
     fetchData();
     
   }, []);
-  console.log(itemsbreakfast);
   
   const addItemsToCarts = (item) => {
     addOrder(item)
