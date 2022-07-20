@@ -11,8 +11,6 @@ import { AuthProvider } from "../../Context/authContext";
 
 test("render ¿No tienes cuenta?", () => {
   const history = createMemoryHistory();
-  // const route = '/Login'
-  // history.push(route)
   render(
     <AuthProvider>
         <Router location={history.location} navigator={history}>

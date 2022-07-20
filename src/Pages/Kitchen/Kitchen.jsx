@@ -8,14 +8,13 @@ import "./kitchen.css";
 
 export const Kitchen = () => {
   const [orders, setOrders] = useState([]);
-  //const [orderUpdate, setOrderUpdate] = useState([]);
+
   const fetchData = async () => {
     let array = [];
     const querySnapshot = await getDocs(collection(db, "order"));
 
     querySnapshot.forEach((doc) => {
       const dataOrder = { ...doc.data(), id: doc.id };
-      //console.log(dataOrder);
       array.push(dataOrder);
       setOrders(array);
     });
@@ -32,12 +31,10 @@ export const Kitchen = () => {
       const changeRef = await updateDoc(idRef, {
         status: "Atendido",
       });
-      const attended = swal("Su pedido ya fue atendido", "", "warning");
+      const attended = swal("Su pedido ya paso a atendido", "", "warning");
       idRef.status === "Pendiente" ? changeRef : attended;
       fetchData();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const changeStatusMesero = async (id) => {
@@ -49,13 +46,10 @@ export const Kitchen = () => {
       const attended = swal("Su pedido ha sido entregado", "", "success");
       idRef.status === "Atendido" ? changeRef : attended;
       fetchData();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
-  const trabajador = localStorage.getItem("userEmail");
-  console.log(trabajador);
+  const employee = localStorage.getItem("userEmail");
 
   return (
     <>
@@ -66,47 +60,45 @@ export const Kitchen = () => {
         </section>
         <div className="container-order">
           <section className="targetOrder">
-            {/* {console.log(orders)} */}
             {orders.map((item, i) => (
               <div className="card-order" key={i}>
                 <div className="order-information">
-                  
-                  <section>Cliente:<br></br> {item.customer} </section>
-                  
-                
-                 <section className="tableClient">   🪑 {item.mesa} <br></br> </section>
-               
+                  <section>
+                    Cliente:<br></br> {item.customer}{" "}
+                  </section>
+
+                  <section className="tableClient">
+                    {" "}
+                    🪑 {item.mesa} <br></br>{" "}
+                  </section>
                 </div>
                 {item.pedido?.map((pedido, i) => (
                   <ul key={i}>
                     <li className="kitchen-list"> {pedido.items}</li>
                   </ul>
                 ))}
-              
-                <section className="total">Total : {item.total}${/* {console.log(item)} */}
-                </section>
+
+                <section className="total">Total : {item.total}$</section>
                 <div className="statusButton">
-                    {trabajador === "cocina@gmail.com" ? (
-                      <button
-                        className="statusColor1"
-                        onClick={() => changeStatusKitchen(item.id)}
-                      >
-                        {" "}
-                        {item.status}
-                      </button>
-                    ) : (
-                      <button
-                        disabled={item.status === "Pendiente"}
-                        className="statusColor2"
-                        onClick={() => changeStatusMesero(item.id)}
-                      >
-                        {" "}
-                        {item.status}
-                      </button>
-                    )}
-                  </div>
-                  {console.log(item)}
-      
+                  {employee === "cocina@gmail.com" ? (
+                    <button
+                      className="statusColor1"
+                      onClick={() => changeStatusKitchen(item.id)}
+                    >
+                      {" "}
+                      {item.status}
+                    </button>
+                  ) : (
+                    <button
+                      disabled={item.status === "Pendiente"}
+                      className="statusColor2"
+                      onClick={() => changeStatusMesero(item.id)}
+                    >
+                      {" "}
+                      {item.status}
+                    </button>
+                  )}
+                </div>
               </div>
             ))}
           </section>

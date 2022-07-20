@@ -25,10 +25,8 @@ export const Login = () => {
         loginemail + " Ya puede realizar tu pedido",
         "success"
       );
-      // alert('Bienvenido ' + email + 'ya puedes hacer el pedido');
-      //   console.log('usuario', email, 'logueado');
     } catch (error) {
-      console.log(error.code);
+     
     }
   };
   const styleNav = {
@@ -62,14 +60,14 @@ export const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         ></input>
-         <button
+        <button
           className="buttonLogin"
           data-testid="button-login"
           type="submit"
         >
-         Iniciar sesión
+          Iniciar sesión
         </button>
-        
+
         <p>
           ¿No tienes cuenta?
           <a href="/register" style={styleNav}>
@@ -77,7 +75,6 @@ export const Login = () => {
             Regístrate
           </a>
         </p>
-       
       </div>
     </form>
   );

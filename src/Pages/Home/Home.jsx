@@ -6,20 +6,15 @@ import { cartContext } from "../../Context/CartContext";
 import NavBar from "../../Components/NavBar/NavBar";
 import { Additional } from "../../Components/Items/Additional";
 import swal from "sweetalert";
-/*import { collectionOrder } from '../../FirebaseConfig/FirestoreDB';
- */
 import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { db } from "../../FirebaseConfig/FirestoreDB";
 
-// import { useNavigate } from "react-router-dom";
-
 export const Home = () => {
-  // const navigate = useNavigate();
+  //Tab para categorías
   const [changeState, setTChangeState] = useState(1);
   const [total, setTotal] = useState(0);
   const { cart, setCart, customer, setCustomer, table, setTable } =
     useContext(cartContext);
- 
 
   useEffect(() => {
     const reduceNewO = cart.reduce((acumulador, item) => {
@@ -45,7 +40,6 @@ export const Home = () => {
       customer: customer || null,
       mesa: table || null,
       pedido: cart,
-      // orden: orden,
       status: "Pendiente",
       date: Timestamp.fromDate(new Date()),
       total: total || null,
@@ -63,13 +57,6 @@ export const Home = () => {
     cartTemp.splice(i, 1);
     setCart(cartTemp);
   };
-  /*   const handleSendOrder =  () => {
-    collectionOrder()
-      .then(() =>
-      swal("Pedido enviado a cocina", "Puede consultar el estado de su pedido", "success")
-    ).catch((error) =>
-    console.log(error))
-    }  */
 
   return (
     <div className="container-home">
@@ -79,106 +66,106 @@ export const Home = () => {
         </section>
         <div className="divMenu">
           <section className="menu-items">
-          <div className="container-tabs">
-            <h1 className="title-pages">Menu</h1>
-            <div className="bloc-tabs">
-              <button
-                className={changeState === 1 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(1)}
-              >
-                {" "}
-                Desayuno
-              </button>
+            <div className="container-tabs">
+              <h1 className="title-pages">Menu</h1>
+              <div className="bloc-tabs">
+                <button
+                  className={changeState === 1 ? "tabs active-tabs" : "tabs"}
+                  onClick={() => toggleTab(1)}
+                >
+                  {" "}
+                  Desayuno
+                </button>
 
-              <button
-                className={changeState === 2 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(2)}
-              >
-                {" "}
-                Almuerzo
-              </button>
+                <button
+                  className={changeState === 2 ? "tabs active-tabs" : "tabs"}
+                  onClick={() => toggleTab(2)}
+                >
+                  {" "}
+                  Almuerzo
+                </button>
 
-              <button
-                className={changeState === 3 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(3)}
-              >
-                {" "}
-                Adicional
-              </button>
-            </div>
-            <div className="containerItems">
-              <div className="content-tabs">
-                <div
-                  className={
-                    changeState === 1 ? "content  active-content" : "content"
-                  }
+                <button
+                  className={changeState === 3 ? "tabs active-tabs" : "tabs"}
+                  onClick={() => toggleTab(3)}
                 >
-                  <Breakfast />
-                </div>
-                <div
-                  className={
-                    changeState === 2 ? "content  active-content" : "content"
-                  }
-                >
-                  <Lunch />
-                </div>
-                <div
-                  className={
-                    changeState === 3 ? "content  active-content" : "content"
-                  }
-                >
-                  <Additional />
+                  {" "}
+                  Adicional
+                </button>
+              </div>
+              <div className="containerItems">
+                <div className="content-tabs">
+                  <div
+                    className={
+                      changeState === 1 ? "content  active-content" : "content"
+                    }
+                  >
+                    <Breakfast />
+                  </div>
+                  <div
+                    className={
+                      changeState === 2 ? "content  active-content" : "content"
+                    }
+                  >
+                    <Lunch />
+                  </div>
+                  <div
+                    className={
+                      changeState === 3 ? "content  active-content" : "content"
+                    }
+                  >
+                    <Additional />
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>{" "}
-        </section>
-        <section className="conteinerOrder">
-          <div className="take-order">
-            <input
-              type="text"
-              name="name"
-              className="nameClient"
-              defaultValue={customer}
-              placeholder="Nombre del cliente"
-              onChange={handleCustomerName}
-            />
-            <input
-              type="number"
-              className="table-number"
-              placeholder="N° Mesa"
-              defaultValue={table}
-              onChange={handleNumberTable}
-            />
-            <br></br>
-            <span>Pedido:</span>
-            <div className="waiter-order">
-              <ul>
-                {(cart || {}).map((item, index) => (
-                  <li className="order-list" key={index}>
-                    <span className="lis-order">
-                      {item.items} {item.price}$
-                    </span>
-                    <button
-                      className="delete-items"
-                      onClick={() => handleDelete(index)}
-                    >
-                      ❌
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <section className="section-total">
-            <span className="price-total">TOTAL={total}$</span>
-            <br></br>
+            </div>{" "}
           </section>
-          <button className="sendOrder" onClick={handleSendOrder}>
-            Enviar Orden
-          </button>
-        </section> </div>
-      
+          <section className="conteinerOrder">
+            <div className="take-order">
+              <input
+                type="text"
+                name="name"
+                className="nameClient"
+                defaultValue={customer}
+                placeholder="Nombre del cliente"
+                onChange={handleCustomerName}
+              />
+              <input
+                type="number"
+                className="table-number"
+                placeholder="N° Mesa"
+                defaultValue={table}
+                onChange={handleNumberTable}
+              />
+              <br></br>
+              <span>Pedido:</span>
+              <div className="waiter-order">
+                <ul>
+                  {(cart || {}).map((item, index) => (
+                    <li className="order-list" key={index}>
+                      <span className="lis-order">
+                        {item.items} {item.price}$
+                      </span>
+                      <button
+                        className="delete-items"
+                        onClick={() => handleDelete(index)}
+                      >
+                        ❌
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <section className="section-total">
+              <span className="price-total">TOTAL={total}$</span>
+              <br></br>
+            </section>
+            <button className="sendOrder" onClick={handleSendOrder}>
+              Enviar Orden
+            </button>
+          </section>{" "}
+        </div>
       </div>
     </div>
   );

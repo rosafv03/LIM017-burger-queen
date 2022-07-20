@@ -1,4 +1,3 @@
-// import { createContext, useContext } from "react";
 import { useState, createContext,  } from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword,getAuth, signOut} from "firebase/auth";
 import { app } from "../FirebaseConfig/init";
@@ -10,18 +9,9 @@ export const userContext =createContext()
  export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(false);
 
-    // useEffect(() => {
-    //     const unsuscribe = onAuthStateChanged(auth,(user)  => {
-    //         console.log(user)
-    //     })
-    //     return () => unsuscribe()
-    // }, [])
-    // const user = {
-    //     login: true
-    // };
+ 
     const registerUser = (email, password,role ) =>  createUserWithEmailAndPassword(auth ,email ,password,role);
      const loginUser = (email, password) => {
-         console.log("entrando en la funcion")
          signInWithEmailAndPassword(auth, email, password);
     } 
     

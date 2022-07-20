@@ -13,10 +13,10 @@ function Navigation() {
       <AuthProvider>
         <CartContextProvider>
           <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/kitchen" element={<Kitchen />} />
-            <Route path="/" element={<Login />} />
+            <Route exact path="/" element={<Login />} />
+            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/kitchen" element={<Kitchen />} />
           </Routes>
         </CartContextProvider>
       </AuthProvider>
