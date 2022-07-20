@@ -2,11 +2,11 @@
 
 ## Índice
 
-[1. Definición del proyecto 📝](#1-definición-del-proyecto-)
-[2. Principales usuarios del producto](#2-principales-usuarios-del-producto)
+[1. Definición del proyecto 📝](#1-definición-del-proyecto-) <br>
+[2. Principales usuarios del producto](#2-principales-usuarios-del-producto)<br>
 [3. Historias de usuarios 👩 👨](#3-historias-de-usuarios--)
        ✔ [Usuario: Mesero.](#usuario-mesero)
-       ✔ [Usuario: Jefe de cocina.](#usuario-jefe-de-cocina)
+       ✔ [Usuario: Jefe de cocina.](#usuario-jefe-de-cocina)<br>
 [4. Objetivos de aprendizaje](#4-objetivos-de-aprendizaje)
          ✔ [HTML y CSS](#html-y-css)
          ✔ [JavaScript](#javascript)
@@ -14,10 +14,10 @@
          ✔ [Git y GitHub](#git-y-github)
          ✔ [Firebase](#firebase)
          ✔ [React](#react)
-         ✔ [UX](#ux)
-[5. Prototipo](#5-prototipo)
-[6. Vista Proyecto Final](#6-Vista-Proyecto-Final)
-[7. Equipo](#7-Equipo)
+         ✔ [UX](#ux)<br>
+[5. Prototipo](#5-prototipo)<br>
+[6. Vista Proyecto Final](#6-Vista-Proyecto-Final)<br>
+[7. Equipo](#7-Equipo)<br>
 
 
 ## 1. Definición del proyecto 📝
@@ -183,7 +183,7 @@ A continuación puedes ver los objetivos de aprendizaje de este proyecto:
 
 #### 7. Equipo
 *[Gabriela Tornel][1]*<img src="https://media2.giphy.com/media/rsUGLKwgSvSxmq1VrZ/giphy.gif?cid=ecf05e479fcrh6mtdxhhi48hatk1290uyie5om0l7apqy52r&rid=giphy.gif&ct=s" height="60px">
-*[Rosa Flores][1]* <img src="https://media0.giphy.com/media/xDhlYSGe2T416fLxmd/giphy.gif?cid=790b761135d1fb897c4c74ddf41716f1bd9cac5373916f45&rid=giphy.gif&ct=s" height="50px">
+*[Rosa Flores][2]* <img src="https://media0.giphy.com/media/xDhlYSGe2T416fLxmd/giphy.gif?cid=790b761135d1fb897c4c74ddf41716f1bd9cac5373916f45&rid=giphy.gif&ct=s" height="50px">
 
 [1]: https://github.com/GabrielaTornel
 [2]: https://github.com/rosafv03
