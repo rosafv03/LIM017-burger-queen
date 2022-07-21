@@ -1,3 +1,4 @@
+import { useState } from "react";
 export const getAuth = () => Promise.resolve({});
 
 
@@ -25,27 +26,27 @@ export const createUserWithEmailAndPassword = async (auth, email, password) => {
 
 }
  */
-// export const AuthProvider = () => ({ children }) => {
-//   const [user, setUser] = useState(false);
+export const AuthProvider = () => ({ children }) => {
+  const [user, setUser] = useState(false);
 
-//   // useEffect(() => {
-//   //     const unsuscribe = onAuthStateChanged(auth,(user)  => {
-//   //         console.log(user)
-//   //     })
-//   //     return () => unsuscribe()
-//   // }, [])
-//   // const user = {
-//   //     login: true
-//   // };
-//   const registerUser = (email, password,role ) =>  createUserWithEmailAndPassword(auth ,email ,password,role);
-//    const loginUser = (email, password) => {
-//        console.log("entrando en la funcion")
-//        signInWithEmailAndPassword(auth, email, password);
-//   } 
+  // useEffect(() => {
+  //     const unsuscribe = onAuthStateChanged(auth,(user)  => {
+  //         console.log(user)
+  //     })
+  //     return () => unsuscribe()
+  // }, [])
+  // const user = {
+  //     login: true
+  // };
+  const registerUser = (email, password,role ) =>  createUserWithEmailAndPassword(auth ,email ,password,role);
+   const loginUser = (email, password) => {
+       console.log("entrando en la funcion")
+       signInWithEmailAndPassword(auth, email, password);
+  } 
   
-//   return (
-//   <userContext.Provider value={{ user, setUser,  registerUser, loginUser}}>
-//   {children}
-//   </userContext.Provider>
-//   );
-// };
+  return (
+  <userContext.Provider value={{ user, setUser,  registerUser, loginUser}}>
+  {children}
+  </userContext.Provider>
+  );
+};
