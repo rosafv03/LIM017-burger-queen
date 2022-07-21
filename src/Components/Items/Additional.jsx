@@ -11,7 +11,6 @@ export const Additional = () => {
     useEffect(() => {
         const fetchData = async () => {
           const itemsDB = await itemSortAdditional();
-          console.log('trayendo items', itemsDB)
           setItems(itemsDB)
         }
         fetchData();

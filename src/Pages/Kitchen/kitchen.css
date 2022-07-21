@@ -1,27 +1,18 @@
 
 
 .container-kitchen {
-  /* background-color: #f3d09d; */
   background-image: url(../../assets/img/background-kitchen.png);
   display: block;
-  /* text-align: center; */
   height: auto;
   border-color: 1px solid white;
   font-size: 20px;
-  /* margin: auto; */
-  /* margin-left: 58px; */
-  /* margin-right: 50px; */
-  /* background-color: #000000; */
   color: rgb(0, 0, 0);
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  /* position: fixed; */
   background-attachment: fixed;
   background-repeat: repeat;
   width: 100%;
-  /* height: 100vh; */
-  /* background-position: top left; */
 }
 .targetOrder {
   display: grid;
@@ -33,14 +24,12 @@
   border: 3px solid #493235;
   border-radius: 0 0 10px 10px;
   display: flex;
-  /* flex: 2 1; */
   flex-direction: column;
-  /* font-size: 15px; */
   justify-content: space-around;
   margin: 0.5rem;
   max-width: 300px;
   min-width: 200px;
-  /* padding: 1rem; */
+
 }
 body{
  
@@ -50,15 +39,6 @@ body{
   background-size: cover;
 }
 
-.container-order {
-/* 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  overflow: scroll; */
-
-}
 .statusButton {
   width: 100%;
   border-radius: 0 0 10px 10px;
@@ -93,7 +73,6 @@ body{
 .statusColor2 {
   display: flex;
   justify-content: center;
-  /* margin: 15px 0px 5px 0px; */
   font-size: 25px;
   cursor: pointer;
 }
@@ -107,7 +86,6 @@ body{
   width: 100%;
   background-color: #88A02E;
   border-radius: 0 0 10px 10px;
-  /* margin: 0px; */
   margin-bottom: 0px;
 }
 
@@ -120,8 +98,6 @@ body{
 .kitchen-list {
   display: flex;
   border-bottom: 1px solid #d9a55f;
-  /* font-family: monospace; */
-  /* font-size: revert; */
   font: inherit;
   font-style: unset;
   font-feature-settings: "smcp";
