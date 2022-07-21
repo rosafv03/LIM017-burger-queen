@@ -11,26 +11,26 @@ test.only("render ¿No tienes cuenta?", () => {
   const userContext = React.createContext()
 
   const AuthProvider = ({ children }) => {
-     const value = {
+    const value = {
       user: {},
-      setUser: () => {},
-      registerUser: () => {},
-      loginUser: () => {},
-     }
+      setUser: () => { },
+      registerUser: () => { },
+      loginUser: () => { },
+    }
 
-      return (
-          <userContext.Provider value={value}>
-              {children}
-          </userContext.Provider>
-      );
+    return (
+      <userContext.Provider value={value}>
+        {children}
+      </userContext.Provider>
+    );
   };
   const history = createMemoryHistory();
   render(
     <AuthProvider>
-        <Router location={history.location} navigator={history}>
-        <Login/>
+      <Router location={history.location} navigator={history}>
+        <Login />
       </Router>
-    </AuthProvider> 
+    </AuthProvider>
   );
 
   screen.debug()
